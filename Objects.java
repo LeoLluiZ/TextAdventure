@@ -18,7 +18,7 @@ public class Objects {
     }
 
     private void setLoot(items[] loot) {
-        this.loot = loot;
+        Loot = loot;
     }
 
     private void setDescription(String description) {
@@ -33,8 +33,7 @@ public class Objects {
     }
 
     public items[] getLoot() {
-        return loot;
-        
+        return Loot;
+
     }
 }
-
