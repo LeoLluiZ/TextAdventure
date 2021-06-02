@@ -3,21 +3,21 @@ package com.company;
 public class Objects {
     private String Name;
     private String Description;
-    private items[] Loot;
+    private Items[] Loot;
 
     public Objects(){}
 
-    public Objects(String Name, String Description, items[] Loot) {
-      setName(Name);
-      setDescription(Description);
-      setLoot(Loot);
+    public Objects(String Name, String Description, Items[] Loot) {
+        setName(Name);
+        setDescription(Description);
+        setLoot(Loot);
     }
 
     private void setName(String name) {
         Name = name;
     }
 
-    private void setLoot(items[] loot) {
+    private void setLoot(Items[] loot) {
         Loot = loot;
     }
 
@@ -25,14 +25,14 @@ public class Objects {
         Description = description;
     }
     public String getName() {
-       return Name;
+        return Name;
     }
 
     public String getDescription() {
         return Description;
     }
 
-    public items[] getLoot() {
+    public Items[] getLoot() {
         return Loot;
 
     }
