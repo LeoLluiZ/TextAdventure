@@ -1,4 +1,4 @@
-package com.company;
+package game;
 public class Items
 {
     private String Name;
