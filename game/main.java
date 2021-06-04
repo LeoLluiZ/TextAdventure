@@ -6,7 +6,6 @@ public class main {
     private Map map;
     private Items[] inventory=new Items[100];
     public static void main(String[] args) {
-
     }
     public void goNorth(){
         if(map.getMap()[y+1][x]!=null&&!map.getMap()[y+1][x].getName().contains("Door"))
