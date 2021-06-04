@@ -16,11 +16,11 @@ public class Items
     {
         Description = description;
     }
-    public String getName()
+    public String getNameItem()
     {
         return Name;
     }
-    public String getDescription()
+    public String getDescriptionItem()
     {
         return Description;
     }

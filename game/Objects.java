@@ -24,11 +24,11 @@ public class Objects {
     private void setDescription(String description) {
         Description = description;
     }
-    public String getName() {
+    public String getNameObject() {
         return Name;
     }
 
-    public String getDescription() {
+    public String getDescriptionObject() {
         return Description;
     }
 
