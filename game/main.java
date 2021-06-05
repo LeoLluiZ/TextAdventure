@@ -6,6 +6,13 @@ public class main {
     private Items[] inventory=new Items[100];
 
     public static void main(String[] args) {
+        Map map=new Map();
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - - - - -"+"\033[36m"+"Intro test"+"\033[0m"+"- - - - - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        map.printMap();
     }
     public void goNorth(){
         if(map.getMapObject(x,y+1)!=null&&!map.getMapObject(x, y+1).getNameObject().contains("Door"))
