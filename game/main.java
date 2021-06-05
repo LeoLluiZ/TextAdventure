@@ -4,11 +4,10 @@ package game;
 public class main {
     private int y=1;
     private int x=3;
-    private Map map;
+    private Map map=new Map();
     private Items[] inventory=new Items[100];
 
-    public static void main(String[] args) {public static void main(String[] args) {
-    }
+    public static void main(String[] args) {
     }
     public void goNorth(){
         if(map.getMap()[y+1][x]!=null&&!map.getMap()[y+1][x].getNameObject().contains("Door"))

@@ -5,8 +5,6 @@ public class Objects {
     private String Description;
     private Items[] Loot;
 
-    public Objects(){}
-
     public Objects(String Name, String Description, Items[] Loot) {
         setName(Name);
         setDescription(Description);
