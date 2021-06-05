@@ -348,8 +348,5 @@ public class Map {
     public void printMap()
     {
         System.out.println(cockpit);
-        System.out.println(room2);
-        System.out.println(room3);
-        System.out.println(room4);
     }
 }
