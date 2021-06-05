@@ -1,6 +1,4 @@
 package game;
-
-
 public class main {
     private int y=1;
     private int x=3;
@@ -10,60 +8,60 @@ public class main {
     public static void main(String[] args) {
     }
     public void goNorth(){
-        if(map.getMap()[y+1][x]!=null&&!map.getMap()[y+1][x].getNameObject().contains("Door"))
+        if(map.getMapObject(x,y+1)!=null&&!map.getMapObject(x, y+1).getNameObject().contains("Door"))
         {
             y++;
         }
         else
         {
-            if(map.getMap()[y+1][x].equals("Door")||searchInventory("Keycard for "+map.getMap()[y+1][x].getNameObject()))
+            if(map.getMapObject(x,y+1).equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y+1).getNameObject()))
             {
                 y+=2;
             }
         }
-        System.out.println(map.getMap()[y][x].getDescriptionObject());
+        System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goSouth(){
-        if(map.getMap()[y-1][x]!=null&&!map.getMap()[y-1][x].getNameObject().contains("Door"))
+        if(map.getMapObject(x,y-1)!=null&&!map.getMapObject(x,y-1).getNameObject().contains("Door"))
         {
             y--;
         }
         else
         {
-            if(map.getMap()[y-1][x].equals("Door")||searchInventory("Keycard for "+map.getMap()[y-1][x].getNameObject()))
+            if(map.getMapObject(x,y-1).equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y-1).getNameObject()))
             {
                 y-=2;
             }
         }
-        System.out.println(map.getMap()[y][x].getDescriptionObject());
+        System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goEast(){
-        if(map.getMap()[y][x+1]!=null&&!map.getMap()[y][x+1].getNameObject().contains("Door"))
+        if(map.getMapObject(x+1,y)!=null&&!map.getMapObject(x+1,y).getNameObject().contains("Door"))
         {
             x++;
         }
         else
         {
-            if(map.getMap()[y][x+1].equals("Door")||searchInventory("Keycard for "+map.getMap()[y][x+1].getNameObject()))
+            if(map.getMapObject(x+1,y).equals("Door")||searchInventory("Keycard for "+map.getMapObject(x+1,y).getNameObject()))
             {
                 x+=2;
             }
         }
-        System.out.println(map.getMap()[y][x].getDescriptionObject());
+        System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goWest(){
-        if(map.getMap()[y][x-1]!=null&&!map.getMap()[y][x-1].getNameObject().contains("Door"))
+        if(map.getMapObject(x-1,y)!=null&&!map.getMapObject(x-1,y).getNameObject().contains("Door"))
         {
             x--;
         }
         else
         {
-            if(map.getMap()[y][x-1].equals("Door")||searchInventory("Keycard for "+map.getMap()[y][x-1].getNameObject()))
+            if(map.getMapObject(x-1,y).equals("Door")||searchInventory("Keycard for "+map.getMapObject(x-1,y).getNameObject()))
             {
                 x-=2;
             }
         }
-        System.out.println(map.getMap()[y][x].getDescriptionObject());
+        System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public boolean searchInventory(String itemName)
     {

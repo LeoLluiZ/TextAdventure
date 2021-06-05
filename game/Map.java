@@ -1,6 +1,6 @@
 package game;
 public class Map {
-    private final Object[][] map=new Object[2][2];
+    private final Object[][] map={{new Object("test", "test",null)},{new Object("test", "test",null)},{new Object("test", "test",null)},{new Object("test", "test",null)}};
     private final String cockpit="- - - - - - - - - - - - - - - - |- - - - - -  -| - - - - - - - - - - - - - - - -\n" +
             "- - - - - - - - - - - - - - - - |- - - - - - - | - - - - - - - - - - - - - - - -\n" +
             "- - - - - - - - - - - - - - - - |- - - - - - - | - - - - - - - - - - - - - - - -\n" +
@@ -85,8 +85,8 @@ public class Map {
             "- - - - - - \\\\00000000000000000000000000000000000000000000000000000// - - - - - -\n" +
             "- - - - - - -\\\\000000000000000000000000000000000000000000000000000//- - - - - - -\n" +
             "- - - - - - - \\\\=================================================// - - - - - - -";
-    public Object[][] getMap()
+    public Object getMapObject(int x, int y)
     {
-        return map;
+        return map[y][x];
     }
 }
