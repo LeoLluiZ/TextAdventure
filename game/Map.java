@@ -342,10 +342,12 @@ public class Map {
             "- - - - - - -\\\\000000000000000000000000000000000000000000000000000//- - - - - - -\n" +
             "- - - - - - - \\\\=================================================// - - - - - - -\n" +
             "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
+    //getter for Objects in the Object[] map;
     public Object getMapObject(int x, int y)
     {
         return map[y][x];
     }
+    //Prints the map
     public void printMap()
     {
         System.out.println(cockpit);

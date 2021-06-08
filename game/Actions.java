@@ -7,6 +7,7 @@ public class Actions {
     private int x=3;
     private final Map map=new Map();
     private Items[] inventory=new Items[100];
+    //movement methods
     public void goNorth(){
         if(map.getMapObject(x,y+1)!=null&&!map.getMapObject(x, y--+1).getNameObject().contains("Door"))
         {
@@ -63,6 +64,7 @@ public class Actions {
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
+    //inventory methods
     public boolean searchInventory(String itemName)
     {
         for (Items items : inventory) {
@@ -88,10 +90,12 @@ public class Actions {
         }
         System.out.println("-----------------------------------------");
     }
+    //help method
     public void help()
     {
         System.out.println("\fMethod to help player if needed."); // nur ein Befehl auf einmal, groß-klein schreibung ist egal
     }
+    //input with "text recognition"
     public void input()
     {
         Scanner keyboard=new Scanner(System.in);
@@ -141,4 +145,3 @@ public class Actions {
         System.out.println("Input couldn't be recognized");
         }
     }
-

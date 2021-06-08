@@ -4,13 +4,13 @@ public class Object {
     private String Name;
     private String Description;
     private Items[] Loot;
-
+//Constructor
     public Object(String Name, String Description, Items[] Loot) {
         setName(Name);
         setDescription(Description);
         setLoot(Loot);
     }
-
+//Setters
     private void setName(String name) {
         Name = name;
     }
@@ -25,7 +25,7 @@ public class Object {
     public String getNameObject() {
         return Name;
     }
-
+//getters
     public String getDescriptionObject() {
         return Description;
     }

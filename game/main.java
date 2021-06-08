@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class main {
 
+    //main method containing the beginning of the game and a loop with the game running in it till the game is lost or won
     public static void main(String[] args) {
         Map map=new Map();
         Actions actions=new Actions();
