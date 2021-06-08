@@ -78,7 +78,7 @@ public class Actions {
     {
         for (Items items : inventory) {
             if (items != null) {
-                System.out.println("\f-----------------------------------------");
+                System.out.println("\f--------------------------------------------------------------------------------");
                 System.out.println("| " + items.getNameItem() + "                                      " + "|");
                 for (int x = 0; x < items.getNameItem().length(); x++) {
                     System.out.print(" ");
@@ -87,8 +87,14 @@ public class Actions {
                 //spaces have to be
 
             }
+            else
+            {
+                System.out.println("---------------------------------------------------------------------------------");
+                System.out.println("| empty                                                                         |");
+                break;
+            }
         }
-        System.out.println("-----------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------");
     }
     //help method
     public void help()

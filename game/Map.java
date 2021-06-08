@@ -2,7 +2,7 @@ package game;
 public class Map {
     //can be reworked to one map when array is finished.
     private final Object[][] map={{new Object("test", "test",null)},{new Object("test", "test",null)},{new Object("test", "test",null)},{new Object("test", "test",null)}};
-    private final String cockpit="- - - - - - - - - - - - - - - - |- - - - - -  -| - - - - - - - - - - - - - - - -\n" +
+    private final String cockpit="- - - - - - - - - - - - - - - - |- - - - - - - | - - - - - - - - - - - - - - - -\n" +
             "- - - - - - - - - - - - - - - - |- - - - - - - | - - - - - - - - - - - - - - - -\n" +
             "- - - - - - - - - - - - - - - - |- - - - - - - | - - - - - - - - - - - - - - - -\n" +
             "- - - - - - - - - - - - - - - - |- - - - - - - | - - - - - - - - - - - - - - - -\n" +
