@@ -13,9 +13,17 @@ public class main {
         System.out.println("- - - - - - - - - - - - - - - - - -"+"\033[36m"+" Intro test"+"\033[0m"+"- - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-        while(true) {
+        while(actions.getMoves()<2) {
             map.printMap();
             actions.input();
+        }
+        if(actions.getMoves()<2)
+        {
+            System.out.println("Game Over");
+        }
+        else
+        {
+            System.out.println("Mission complete");
         }
     }
 }
