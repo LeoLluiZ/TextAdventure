@@ -1,7 +1,7 @@
 package game;
 public class Map {
     //can be reworked to one map when array is finished.
-    private Object[][] map={
+    private final Object[][] map={
                             {null,null,null,new Object("Cockpit","quouqe",null),new Object("Hall","hall des",null),null,null},
                             {null,null,new Object("Wire", "wire des",null),new Object("Door","door des",null),null,null},
                             {null,null,new Object("Seal", "seal des",null),new Object("Door","door des",null),null,null},
