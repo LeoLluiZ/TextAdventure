@@ -83,6 +83,7 @@ public class Actions {
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     //inventory methods
+    //searches for a specific item
     public boolean searchInventory(String itemName)
     {
         for (Items items : inventory) {
@@ -92,6 +93,7 @@ public class Actions {
         }
         return false;
     }
+    // the inventory of the player is printed in a table
     public void  printInventory()
     {
         for (Items items : inventory) {
@@ -114,12 +116,15 @@ public class Actions {
         }
         System.out.println("---------------------------------------------------------------------------------\n");
     }
-    //help method
+    //help method: displays a little bit of general advice to help the player
     public void help()
     {
         System.out.println("\fMethod to help player if needed."); // nur ein Befehl auf einmal, groß-klein schreibung ist egal
     }
-    //input with "text recognition"
+    /*
+    input with "text recognition":
+    A input is taked put to lower case and split into words, then the programm iterates throgh them trying to find a keyword. If a keyword is found the programm will search for further instructions if required
+    */
     public void input()
     {
         Scanner keyboard=new Scanner(System.in);

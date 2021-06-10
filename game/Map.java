@@ -2,9 +2,8 @@ package game;
 public class Map {
     private boolean part2=false;
     private boolean part3=false;
-    private Object[][] map={
-                            {null,null,null,new Object("Cockpit","quouqe",null),new Object("Hall","hall des",null),null,null},
-                            {null,null,new Object("Wire", "wire des",null),new Object("Door","door des",null),null,null},
+    private final Object[][] map=new Object[][]{{null,null,null,null,null,null,null},{null,null,null,new Object("Cockpit","quouqe",null),null,null,null},
+                            {null,null,new Object("Wire", "wire des",null),new Object("Hallway","halway des",null),new Object("Room","room des",null),null,null},
                             {null,null,new Object("Seal", "seal des",null),new Object("Door","door des",null),null,null},
                             {null,null,null,new Object("Hall Center", "hall des",null),new Object("Door","door des",null),new Object("Map","map des",null),null},
                             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
@@ -15,15 +14,8 @@ public class Map {
                             {null,null,new Object("Breach", "breach des",null),new Object("Door", "door des",null),new Object("Hall Center", "hall des",null),null,null},
                             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
                             {null,null,null,new Object("Escape Pods", "amogus",null)},null,null,null};
-//Setters
-    public void setPart2(boolean part2) {
-        this.part2 = part2;
-    }
-
-    public void setPart3(boolean part3) {
-        this.part3 = part3;
-    }
-    private final String cockpit="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n" +"- - - - - - - - - - - - - - -//|0000000000000000|\\\\ - - - - - - - - - - - - - - -\n" +
+    private final String cockpit="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"+
+            "-- - - - - - - - - - - - - - //|0000000000000000|\\\\ - - - - - - - - - - - - - - -\n" +
             "- - - - - - - - - - - - - -//0000000000000000000000\\\\ - - - - - - - - - - - - - -\n" +
             "- - - - - - - - - - - - - -||0000000000000000000000|| - - - - - - - - - - - - - -\n" +
             "- - - - - - - - - - - - - -||000+==============+000|| - - - - - - - - - - - - - -\n" +
@@ -97,14 +89,22 @@ public class Map {
             "- - - - - - -\\000000000000000000000000000000000000000000000000000//- - - - - - -\n" +
             "- - - - - - - \\=================================================// - - - - - - -\n" +
             "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
+    //Setters
+    public void setPart2(boolean part2) {
+        this.part2 = part2;
+    }
+
+    public void setPart3(boolean part3) {
+        this.part3 = part3;
+    }
     public void printMap(int x,int y)
     {
         //First part is always printed
     System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n" +"- - - - - - - - - - - - - - -//|0000000000000000|\\\\ - - - - - - - - - - - - - - -\n" +
         "- - - - - - - - - - - - - -//0000000000000000000000\\\\ - - - - - - - - - - - - - -\n" +
         "- - - - - - - - - - - - - -||0000000000000000000000|| - - - - - - - - - - - - - -\n" +
-        "- - - - - - - - - - - - - -||000+==============+000|| - - - - - - - - - - - - - -\n");
-    if(x==4&&y==1)
+        "- - - - - - - - - - - - - -||000+==============+000|| - - - - - - - - - - - - - -");
+    if(x==3&&y==1)
         //if the player is in the cockpit the room is highlighted
         System.out.print("- - - - - - - - - - - - - //|000|"+"\033[45;1m"+"              "+"\033[0m"+"|000|\\\\- - - - - - - - - - - - - -\n" +
                 "- - - - - - - - - - - - - ||0000|"+"\033[45;1m"+"              "+"\033[0m"+"|00000|| - - - - - - - - - - - - -\n" +
