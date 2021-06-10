@@ -14,7 +14,7 @@ public class main {
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         while(actions.getMoves()<2) {
-            map.printMap();
+            map.printMap(actions.getX(), actions.getY());
             actions.input();
         }
         if(actions.getMoves()<2)

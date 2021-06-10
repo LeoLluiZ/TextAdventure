@@ -8,9 +8,15 @@ public class Actions {
     private int x=3;
     private final Map map=new Map();
     private Items[] inventory=new Items[100];
+    //getters
     public int getMoves(){
         return moves;
     }
+    public int getX(){ return x; }
+    public int getY(){
+        return y;
+    }
+
     //movement methods
     public void goNorth(){
         if(map.getMapObject(x,y+1)!=null&&!map.getMapObject(x, y--+1).getNameObject().contains("Door"))
