@@ -19,65 +19,81 @@ public class Actions {
 
     //movement methods
     public void goSouth(){
-        if(map.check(x,y+1)!=false&&!map.getMapObject(x, y+1).getNameObject().contains("Door"))
+        if(map.check(x,y+1)!=false)
         {
-            y++;
-            moves++;
+            if(!map.getMapObject(x, y+1).getNameObject().contains("Door")) {
+                y++;
+                moves++;
+            }
         }
         else
         {
-            if(map.check(x,y+1)!=false&&map.getMapObject(x,y+1).getNameObject().equals("Door")||map.check(x,y+1)!=false&&searchInventory("Keycard for "+map.getMapObject(x,y+1).getNameObject()))
+            if(map.check(x,y+1)!=false)
             {
-                y+=2;
-                moves++;
+                if(map.getMapObject(x,y+1).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y+1).getNameObject())) {
+                    y += 2;
+                    moves++;
+                }
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goNorth(){
-        if(map.check(x,y-1)!=false&&!map.getMapObject(x, y-1).getNameObject().contains("Door"))
+        if(map.check(x,y-1)!=false)
         {
-            y--;
-            moves++;
+            if(!map.getMapObject(x, y-1).getNameObject().contains("Door")) {
+                y--;
+                moves++;
+            }
         }
         else
         {
-            if(map.check(x,y+1)!=false&&map.getMapObject(x,y-1).getNameObject().equals("Door")||map.check(x,y+1)!=false&&searchInventory("Keycard for "+map.getMapObject(x,y-1).getNameObject()))
+            if(map.check(x,y-1)!=false)
             {
-                y-=2;
-                moves++;
+                if(map.getMapObject(x,y-1).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y-1).getNameObject())) {
+                    y -= 2;
+                    moves++;
+                }
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goEast(){
-        if(map.check(x+1,y)!=false&&!map.getMapObject(x+1,y).getNameObject().contains("Door"))
+        if(map.check(x+1,y)!=false)
         {
-            x++;
-            moves++;
+            if(!map.getMapObject(x+1, y).getNameObject().contains("Door")) {
+                x++;
+                moves++;
+            }
         }
         else
         {
-            if(map.check(x,y+1)!=false&&map.getMapObject(x+1,y).getNameObject().equals("Door")||map.check(x,y+1)!=false&&searchInventory("Keycard for "+map.getMapObject(x+1,y).getNameObject()))
+            if(map.check(x+1,y)!=false)
             {
-                x+=2;
-                moves++;
+                if(map.getMapObject(x+1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x+1,y).getNameObject())) {
+                    x += 2;
+                    moves++;
+                }
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goWest(){
-        if(map.check(x-1,y)!=false&&!map.getMapObject(x-1,y).getNameObject().contains("Door"))
+        if(map.check(x-1,y)!=false)
         {
-            x--;
-            moves++;
+            if(!map.getMapObject(x-1, y).getNameObject().contains("Door")) {
+                x--;
+                moves++;
+            }
         }
         else
         {
-            if(map.check(x,y+1)!=false&&map.getMapObject(x-1,y).getNameObject().equals("Door")||map.check(x,y+1)!=false&&searchInventory("Keycard for "+map.getMapObject(x-1,y).getNameObject()))
+            if(map.check(x-1,y)!=false)
             {
-                x-=2;
-                moves++;
+                if(map.getMapObject(x-1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x-1,y).getNameObject())) {
+                    x -= 2;
+                    moves++;
+                }
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
