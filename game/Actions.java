@@ -18,15 +18,15 @@ public class Actions {
     }
 
     //movement methods
-    public void goNorth(){
-        if(map.getMapObject(x,y+1)!=null&&!map.getMapObject(x, y--+1).getNameObject().contains("Door"))
+    public void goSouth(){
+        if(map.check(x,y+1)!=false&&!map.getMapObject(x, y+1).getNameObject().contains("Door"))
         {
             y++;
             moves++;
         }
         else
         {
-            if(map.getMapObject(x,y+1).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y+1).getNameObject()))
+            if(map.check(x,y+1)!=false&&map.getMapObject(x,y+1).getNameObject().equals("Door")||map.check(x,y+1)!=false&&searchInventory("Keycard for "+map.getMapObject(x,y+1).getNameObject()))
             {
                 y+=2;
                 moves++;
@@ -34,15 +34,15 @@ public class Actions {
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
-    public void goSouth(){
-        if(map.getMapObject(x,y-1)!=null&&!map.getMapObject(x,y-1).getNameObject().contains("Door"))
+    public void goNorth(){
+        if(map.check(x,y-1)!=false&&!map.getMapObject(x, y-1).getNameObject().contains("Door"))
         {
             y--;
             moves++;
         }
         else
         {
-            if(map.getMapObject(x,y-1).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y-1).getNameObject()))
+            if(map.check(x,y+1)!=false&&map.getMapObject(x,y-1).getNameObject().equals("Door")||map.check(x,y+1)!=false&&searchInventory("Keycard for "+map.getMapObject(x,y-1).getNameObject()))
             {
                 y-=2;
                 moves++;
@@ -51,14 +51,14 @@ public class Actions {
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goEast(){
-        if(map.getMapObject(x+1,y)!=null&&!map.getMapObject(x+1,y).getNameObject().contains("Door"))
+        if(map.check(x+1,y)!=false&&!map.getMapObject(x+1,y).getNameObject().contains("Door"))
         {
             x++;
             moves++;
         }
         else
         {
-            if(map.getMapObject(x+1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x+1,y).getNameObject()))
+            if(map.check(x,y+1)!=false&&map.getMapObject(x+1,y).getNameObject().equals("Door")||map.check(x,y+1)!=false&&searchInventory("Keycard for "+map.getMapObject(x+1,y).getNameObject()))
             {
                 x+=2;
                 moves++;
@@ -67,14 +67,14 @@ public class Actions {
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goWest(){
-        if(map.getMapObject(x-1,y)!=null&&!map.getMapObject(x-1,y).getNameObject().contains("Door"))
+        if(map.check(x-1,y)!=false&&!map.getMapObject(x-1,y).getNameObject().contains("Door"))
         {
             x--;
             moves++;
         }
         else
         {
-            if(map.getMapObject(x-1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x-1,y).getNameObject()))
+            if(map.check(x,y+1)!=false&&map.getMapObject(x-1,y).getNameObject().equals("Door")||map.check(x,y+1)!=false&&searchInventory("Keycard for "+map.getMapObject(x-1,y).getNameObject()))
             {
                 x-=2;
                 moves++;

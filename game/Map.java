@@ -97,6 +97,14 @@ public class Map {
     public void setPart3(boolean part3) {
         this.part3 = part3;
     }
+    public boolean check(int x, int y){
+        if(map[y][x]!=null)
+            return true;
+            else
+        {
+            return false;
+        }
+    }
     public void printMap(int x,int y)
     {
         //First part is always printed
