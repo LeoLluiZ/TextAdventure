@@ -7,17 +7,18 @@ public class Map {
     private final Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
             {null,null,null,new Object("Cockpit","cock",null),null,null,null},
-            {null,null,new Object("Wire", "wire des",null),/*new Object("Door","door des",null)*/new Object("Hallway","hallway des",null),new Object("Room","room des",null),null,null},
+            {null,null,new Object("Wire", "wire des",null)/*,new Object("Door","door des",null)*/,new Object("Hallway","hallway des",null),/*new Object("Door","door des",null),*/new Object("Room","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
-            {null,null,new Object("Seal", "seal des",null)/*,new Object("Door","door des",null)*/,new Object("Hallway center","hallway des",null),null,null},
+            {null,null,new Object("Seal", "seal des",null)/*,new Object("Door","door des",null)*/,new Object("Hallway center","hallway des",null)/*,new Object("Door","door des",null),new Object("Room","room des",null)*/,null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
-            {null,null,null,new Object("Hall Center", "hall des",null)/*,new Object("Door","door des",null)*/,new Object("Map","map des",null),null},
+            {null,null,/*new Object("Room","room des",null),new Object("Door","door des",null),*/new Object("Hall Center", "hall des",null)/*,new Object("Door","door des",null)*/,new Object("Map","map des",null),null},
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
             {null,null,new Object("Hall Left", "hall left des",null),new Object("Hall Center", "hall des",null),new Object("Hall Right", "hall right des",null),null,null},
-            {null,null,new Object("Hall Left", "hall left des",null),new Object("Door", "Door des",null),new Object("Storage", "storage des",null),/*null to prevent getting to right hallway*/new Object("Hall Right", "hall right des",null),null},
+            /*{null,null,new Object("Door", "Door des",null),null,new Object("Door", "Door des",null),null,null},*/
+            {null,null,new Object("Hall Left", "hall left des",null),new Object("Door", "Door des",null),new Object("Storage", "storage des",null),/*null to prevent getting to right hallway?*/new Object("Hall Right", "hall right des",null),null},
             {null,null,new Object("Hall Left", "hall left des",null),new Object("Hall Center", "hall des",null),new Object("Hall Right", "hall des",null),null,null},
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
-            {null,new Object("Breach", "breach des",null),new Object("Door", "door des",null),new Object("Hall Center", "hall des",null),null,null},
+            {null,new Object("Breach", "breach des",null),new Object("Door", "door des",null),new Object("Hall Center", "hall des",null)/*,new Object(new Object("Door", "Door des",null)),new Object("Room","room des",null)*/,null,null},
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
             {null,null,null,new Object("Escape Pods", "amogus",null)},null,null,null};
 
@@ -437,7 +438,7 @@ public class Map {
                     """
                             - - ||000000000000|\033[45;1m                \033[0m|00+====+     +=====+00|          |000000000000||-
                             - - ||000000000000|\033[45;1m                \033[0m+==+                +==+          |000000000000|| -
-                            - - ||000000000000|\033[45;1m      Breach    \033[0m                                            |000000000000|| -
+                    - - ||000000000000|\033[45;1m      Breach    \033[0m                                          |000000000000|| -
                             - - ||000000000000|\033[45;1m                \033[0m+==+                +==+          |000000000000|| -
                             - - ||000000000000|\033[45;1m                \033[0m|  +=====+    +=====+  |          |000000000000|| -
                             - - ||000000000000+==========+00000000|    |00000000+=========+0000000000000|| - 
@@ -470,7 +471,7 @@ public class Map {
                             - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"""
             );
         else if(y>=13)
-            System.out.print(
+            System.out.println(
                     """
                             - - - \\00000000000000000|                              |0000000000000000// - -
                             - - - -\\0000000000000000|          Escape Pods         |000000000000000//- - -
@@ -483,7 +484,6 @@ public class Map {
                             - - - - - - - \\=================================================// - - - - - -
                             - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"""
             );
-
     }
 
     //getter for Objects in the Object[][] map;
