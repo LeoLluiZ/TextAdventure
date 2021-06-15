@@ -25,15 +25,9 @@ public class Actions {
                 y++;
                 moves++;
             }
-        }
-        else
-        {
-            if(map.check(x,y+1)!=false)
-            {
-                if(map.getMapObject(x,y+1).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y+1).getNameObject())) {
-                    y += 2;
-                    moves++;
-                }
+            else if(map.getMapObject(x,y+1).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y+1).getNameObject())) {
+                y += 2;
+                moves++;
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
@@ -45,15 +39,9 @@ public class Actions {
                 y--;
                 moves++;
             }
-        }
-        else
-        {
-            if(map.check(x,y-1)!=false)
-            {
-                if(map.getMapObject(x,y-1).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y-1).getNameObject())) {
-                    y -= 2;
-                    moves++;
-                }
+            else if(map.getMapObject(x,y-1).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x,y-1).getNameObject())) {
+                y -= 2;
+                moves++;
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
@@ -65,16 +53,11 @@ public class Actions {
                 x++;
                 moves++;
             }
-        }
-
-            if(map.check(x+1,y)!=false)
-            {
-                if(map.getMapObject(x+1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x+1,y).getNameObject())) {
-                    x +=2;
-                    moves++;
-                }
+            else if(map.getMapObject(x+1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x+1,y).getNameObject())) {
+                x +=2;
+                moves++;
             }
-
+        }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     public void goWest(){
@@ -84,16 +67,11 @@ public class Actions {
                 x--;
                 moves++;
             }
-        }
-
-            if(map.check(x-1,y)!=false)
-            {
-                if(map.getMapObject(x-1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x-1,y).getNameObject())) {
-                    x -= 2;
-                    moves++;
-                }
+            else if(map.getMapObject(x-1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x-1,y).getNameObject())) {
+                x -= 2;
+                moves++;
             }
-
+        }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
     //inventory methods
