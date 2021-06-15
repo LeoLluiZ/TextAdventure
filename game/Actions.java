@@ -66,12 +66,12 @@ public class Actions {
                 moves++;
             }
         }
-        else
+        if(map.check(x+1,y)!=false)
         {
             if(map.check(x+1,y)!=false)
             {
                 if(map.getMapObject(x+1,y).getNameObject().equals("Door")||searchInventory("Keycard for "+map.getMapObject(x+1,y).getNameObject())) {
-                    x += 2;
+                    x += 1;
                     moves++;
                 }
             }
