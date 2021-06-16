@@ -7,15 +7,15 @@ public class Map {
     private final Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
             {null,null,null,new Object("Cockpit","cock",null),null,null,null},
-            {null,null,new Object("Wire", "wire des",null)/*,new Object("Door","door des",null)*/,new Object("Hallway","hallway des",null),/*new Object("Door","door des",null),*/new Object("Room","room des",null),null,null},
+            {null,null,new Object("R1", "wire des",null),new Object("Door","door des",null),new Object("Hallway","hallway des",null),new Object("Door","door des",null),new Object("R2","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
-            {null,null,new Object("Seal", "seal des",null)/*,new Object("Door","door des",null)*/,new Object("Hallway center","hallway des",null)/*,new Object("Door","door des",null),new Object("Room","room des",null)*/,null,null},
+            {null,null,new Object("R3", "seal des",null),new Object("Door","door des",null),new Object("Hallway center","hallway des",null),new Object("Door","door des",null),new Object("R4","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
-            {null,null,/*new Object("Room","room des",null),new Object("Door","door des",null),*/new Object("Hall Center", "hall des",null)/*,new Object("Door","door des",null)*/,new Object("Map","map des",null),null},
+            {null,null,new Object("R5","room des",null),new Object("Door","door des",null),new Object("Hall Center", "hall des",null),new Object("Door","door des",null),new Object("R6","map des",null),null},
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
             {null,null,new Object("Hall Left", "hall left des",null),new Object("Hall Center", "hall des",null),new Object("Hall Right", "hall right des",null),null,null},
-            /*{null,null,new Object("Door", "Door des",null),null,new Object("Door", "Door des",null),null,null},*/
-            {null,null,new Object("Hall Left", "hall left des",null),new Object("Door", "Door des",null),new Object("Storage", "storage des",null),/*null to prevent getting to right hallway?*/new Object("Hall Right", "hall right des",null),null},
+            {null,null,new Object("Door", "Door des",null),null,new Object("Door", "Door des",null),null},
+            {null,null,new Object("Hall Left", "hall left des",null),new Object("Door", "Door des",null),new Object("Storage", "storage des",null),new Object("Door","door desu",null),new Object("Hall Right", "hall right des",null),null},
             {null,null,new Object("Hall Left", "hall left des",null),new Object("Hall Center", "hall des",null),new Object("Hall Right", "hall des",null),null,null},
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
             {null,new Object("Breach", "breach des",null),new Object("Door", "door des",null),new Object("Hall Center", "hall des",null)/*,new Object(new Object("Door", "Door des",null)),new Object("Room","room des",null)*/,null,null},
@@ -290,7 +290,7 @@ public class Map {
                     """
 
             );
-        if(x==2&&y==9)
+        if(x==2&&y==10)
             System.out.print(
                 """
                 - - - - - - - - - - - ||000|\033[45;1m \033[0m+====================+ |000|| - - - - - - - - - - -
@@ -312,7 +312,7 @@ public class Map {
                 - - - - - - - - - - - ||000|\033[45;1m \033[0m|        |   |        | |000|| - - - - - - - - - -
                 - - - - - - - - - - - ||000|\033[45;1m \033[0m+=====================+ |000|| - - - - - - - - - -"""
             );
-        else if(x==4&&y==9)
+        else if(x==4&&y==10)
             System.out.print(
                     """
                     - - - - - - - - - - - ||000| +====================+ |000|| - - - - - - - - - - -
@@ -332,7 +332,7 @@ public class Map {
                     - - - - - - - - - - - ||000| |        |   |       | |000|| - - - - - - - - - -
                     - - - - - - - - - - - ||000| +====================+ |000|| - - - - - - - - - """
             );
-        else if(x==5&&y==9)
+        else if(x==5&&y==10)
             System.out.print(
                     """
                     - - - - - -  - - - - - ||000| +====================+\033[45;1m \033[0m|000|| - - - - - - - - - - -
@@ -352,7 +352,7 @@ public class Map {
                     - - - - - - - - - - - ||000| |        |   |       |\033[45;1mL\033[0m|000|| - - - - - - - - - -
                     - - - - - - - - - - - ||000| +====================+\033[45;1mL\033[0m|000|| - - - - - - - - - -     
                     """);
-        else if(y>=9)
+        else if(y>=10)
             System.out.print(
                     """
                     - - - - - - - - - - - ||000| +====================+ |000|| - - - - - - - - - - -
@@ -372,33 +372,33 @@ public class Map {
                     - - - - - - - - - - - ||000| |        |   |       | |000|| - - - - - - - - - -
                     - - - - - - - - - - - ||000| +====================+ |000|| - - - - - - - - - -        
                     """);
-        if(x==2&&y==10)
+        if(x==2&&y==11)
             System.out.print(
                     """
                             - - - - - - - - - - - ||000|\033[45;1m           \033[0m             |000|| - - - - - - - - - -
                             - - +========== - - -//0000+==========+   +==========+0000\\- - - ==========+ -
                             """
             );
-        else if(x==3&&y==10)
+        else if(x==3&&y==11)
             System.out.print(
                     """
                             - - - - - - - - - - - ||000|           \033[45;1m   \033[0m          |000|| - - - - - - - - - -
                             - - +========== - - -//0000+==========+   +==========+0000\\- - - ==========+ - - - - - - - - 
                             """
             );
-        else if(x==4&&y==10)
+        else if(x==4&&y==11)
             System.out.print(
                     """
                             - - - - - - - - - - - ||000|              \033[45;1m          \033[0m|000|| - - - - - - - - - -
                             - - +========== - - -//0000+==========+   +==========+0000\\- - - ==========+ - - - - - - - - 
                             """);
-        else if(y>=10)
+        else if(y>=11)
             System.out.print(
                             """
                             - - - - - - - - - - - ||000|                         |000|| - - - - - - - - - -
                             - - +========== - - -//0000+==========+   +==========+0000\\- - - ==========+ - - - - - - - - 
                             """);
-        if(x==3&&y==11)
+        if(x==3&&y==12)
             System.out.print(
                 """
                 - - ||00000000/- - //00000000000000000|\033[45;1m   \033[0m|0000000000000000/ - -//00000000|| -
@@ -409,7 +409,7 @@ public class Map {
                 - - ||000000000000|          |00000000|\033[45;1m   \033[0m|000000000|         |000000000000|| -
                 """
             );
-        else if(y>=11)
+        else if(y>=12)
             System.out.print(
                     """
                     - - ||00000000/- - //00000000000000000|   |0000000000000000/ - -//00000000|| -
@@ -420,7 +420,7 @@ public class Map {
                     - - ||000000000000|          |00000000|   |000000000|         |000000000000|| -
                     """
             );
-        if(x==3&&y==12)
+        if(x==3&&y==13)
             System.out.print(
                     """
                             - - ||000000000000|          |00+====+     +=====+00|          |000000000000||-
@@ -433,21 +433,21 @@ public class Map {
                             """
 
             );
-        else if(x==1&&y==12)
+        else if(x==1&&y==13)
             System.out.print(
                     """
                             - - ||000000000000|\033[45;1m                \033[0m|00+====+     +=====+00|          |000000000000||-
                             - - ||000000000000|\033[45;1m                \033[0m+==+                +==+          |000000000000|| -
-                    - - ||000000000000|\033[45;1m      Breach    \033[0m                                          |000000000000|| -
+                            - - ||000000000000|\033[45;1m      Breach    \033[0m                                          |000000000000|| -
                             - - ||000000000000|\033[45;1m                \033[0m+==+                +==+          |000000000000|| -
                             - - ||000000000000|\033[45;1m                \033[0m|  +=====+    +=====+  |          |000000000000|| -
                             - - ||000000000000+==========+00000000|    |00000000+=========+0000000000000|| - 
                             - -  \\000000000000000000+============+    +============+000000000000000000//- -
                             """);
-        else if(y>=12)
+        else if(y>=13)
             System.out.print(
                     """
-                             - - ||000000000000|          |00+====+    +=====+00|         |000000000000||-
+                            - - ||000000000000|          |00+=====+    +=====+00|         |000000000000||-
                             - - ||000000000000|  Breach  +==+                +==+         |000000000000|| -
                             - - ||000000000000|                                           |000000000000|| -
                             - - ||000000000000|          +==+                +==+         |000000000000|| -
@@ -456,7 +456,7 @@ public class Map {
                             - -  \\000000000000000000+============+    +============+000000000000000000//- -
                             """
             );
-        if(x==3&&y==13)
+        if(x==3&&y==14)
             System.out.print(
                     """
                             - - - \\00000000000000000|\033[45;1m                              \033[0m|0000000000000000// - -
@@ -470,7 +470,7 @@ public class Map {
                             - - - - - - - \\=================================================// - - - - - -
                             - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"""
             );
-        else if(y>=13)
+        else if(y>=14)
             System.out.println(
                     """
                             - - - \\00000000000000000|                              |0000000000000000// - -
