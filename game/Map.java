@@ -2,12 +2,24 @@ package game;
 public class Map {
     private boolean part2=false;
     private boolean part3=false;
+    private Items[] Room1loot=new Items[]{new Items("Green Keycard","A keycard with a clearence level of green")};
+    private Items[] Room2loot=new Items[]{};
+    private Items[] Room3loot=new Items[]{};
+    private Items[] Room4loot=new Items[]{};
+    private Items[] Room5loot=new Items[]{};
+    private Items[] Room6loot=new Items[]{};
+    private Items[] Room7loot=new Items[]{};
+    private Items[] Room8loot=new Items[]{};
+    private Items[] Room9loot=new Items[]{};
+    private Items[] Room10loot=new Items[]{};
+    private Items[] Room11loot=new Items[]{};
+
     /*fix teleportation to other rooms*/
-    /* this is utterly fucking retarded.*/
+    /* this is utterly fucking retarded.*/ //Red blue green
     private final Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
             {null,null,null,new Object("Cockpit","cock",null),null,null,null},
-            {null,null,new Object("R1", "wire des",null),new Object("Door","door des",null),new Object("Hallway","hallway des",null),new Object("Door","door des",null),new Object("R2","room des",null),null,null},
+            {null,null,new Object("R1", "wire des",Room1loot),new Object("green Door","",null),new Object("Hallway","hallway des",null),new Object("Door","door des",null),new Object("R2","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
             {null,null,new Object("R3", "seal des",null),new Object("Door","door des",null),new Object("Hallway center","hallway des",null),new Object("Door","door des",null),new Object("R4","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
@@ -15,7 +27,7 @@ public class Map {
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
             {null,null,new Object("Hall Left", "hall left des",null),new Object("Hall Center", "hall des",null),new Object("Hall Right", "hall right des",null),null,null},
             {null,null,new Object("Door", "Door des",null),null,new Object("Door", "Door des",null),null},
-            {null,null,new Object("Hall Left", "hall left des",null),new Object("Door", "Door des",null),new Object("Storage", "storage des",null),new Object("Door","door desu",null),new Object("Hall Right", "hall right des",null),null},
+            {null,null,new Object("Hall Left", "hall left des",null),new Object("blue Door", "Door des",null),new Object("Storage", "storage des",null),new Object("Door","door desu",null),new Object("Hall Right", "hall right des",null),null},
             {null,null,new Object("Hall Left", "hall left des",null),new Object("Hall Center", "hall des",null),new Object("Hall Right", "hall des",null),null,null},
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
             {null,new Object("Breach", "breach des",null),new Object("Door", "door des",null),new Object("Hall Center", "hall des",null)/*,new Object(new Object("Door", "Door des",null)),new Object("Room","room des",null)*/,null,null},
@@ -63,7 +75,7 @@ public class Map {
                     - - - - - - - - - - - ||000| |            |       | |000|| - - - - - - - - - - -
                     - - - - - - - - - - - ||000| |            |       | |000|| - - - - - - - - - - -
                     - - - - - - - - - - - ||000| |            |       | |000|| - - - - - - - - - - -
-                    - - - - - - - - - - - ||000| |  Storage   |       | |000|| - - - - - - - - - - -
+                    - - - - - - - - - - - ||000| | -   |       | |000|| - - - - - - - - - - -
                     - - - - - - - - - - - ||000| |            |       | |000|| - - - - - - - - - - -
                     - - - - - - - - - - - ||000| |            |       | |000|| - - - - - - - - - - -
                     - - - - - - - - - - - ||000| |            |       | |000|| - - - - - - - - - - -
