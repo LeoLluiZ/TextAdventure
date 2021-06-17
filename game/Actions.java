@@ -119,6 +119,7 @@ public class Actions {
     */
     public void input()
     {
+        boolean yesnotriggeritems=true;
         Scanner keyboard=new Scanner(System.in);
         String input=keyboard.nextLine();
         input=input.toLowerCase();
@@ -145,8 +146,8 @@ public class Actions {
                                 this.goWest();
                                 return;
                             }
-                            default -> {
-                            }
+
+
                         }
                     System.out.println("Input couldn't be recognized");
                     return;
@@ -161,8 +162,32 @@ public class Actions {
                     this.printInventory();
                     return;
                 }
+                case "search","loot" -> {
+                    if(yesnotriggeritems==true) {
+                          String inputt=keyboard.nextLine().toLowerCase();
+                        switch (inputt) {
+                            case "y","yes" -> {
+                                System.out.println("working");
+                              return;
+                            }
+                            case "n","no" ->{
+                                return;
+                            }
+                        }
+
+                    }
+                    else{
+                        System.out.println("You cannot search this area");
+                        return;
+                    }
+
+
+                }
+                default -> {
+                }
             }
-            }
-        System.out.println("Input couldn't be recognized");
         }
+        System.out.println("Input couldn't be recognized");
     }
+
+}
