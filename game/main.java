@@ -9,13 +9,13 @@ public class main {
         Map map=new Map();
         Actions actions=new Actions();
         Random rnd = new Random();
-        int end = rnd.nextInt(15)+10;
+        int end = rnd.nextInt(110)+70;
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - -"+"\033[36m"+" You are on a spaceship which crashed. Now you have to survive."+"\033[0m"+"- - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-        while(actions.getMoves()<20&&actions.getEscapePods()) {
+        while(actions.getMoves()<end/*&&actions.getEscapePods()*/) {
             System.out.println(actions.getX());
             System.out.println(actions.getY());
             map.printMap(actions.getX(), actions.getY());
