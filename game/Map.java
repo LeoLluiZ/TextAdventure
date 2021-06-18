@@ -4,7 +4,7 @@ public class Map {
     private boolean part3=false;
     /*fix teleportation to other rooms*/
     /* this is utterly fucking retarded.*/
-    private final Object[][] map=new Object[][]{
+    private Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
             {null,null,null,new Object("Cockpit","cock",null),null,null,null},
             {null,new Object("R1", "",null),new Object("Door","door des",null),new Object("Hallway","hallway des",null),new Object("Door","door des",null),new Object("R2","room des",null),null,null},
@@ -518,6 +518,11 @@ public class Map {
                             - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                             """
             );
+    }
+    public void mapInit()
+    {
+
+
     }
     //getter for Objects in the Object[][] map;
 

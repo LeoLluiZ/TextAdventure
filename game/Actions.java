@@ -6,6 +6,7 @@ public class Actions {
     private int moves=0;
     private int y=1;
     private int x=3;
+    private boolean escapePods = false;
     private final Map map=new Map();
     private Items[] inventory=new Items[100];
     //getters
@@ -16,7 +17,9 @@ public class Actions {
     public int getY(){
         return y;
     }
-
+    public boolean getEscapePods(){return escapePods;}
+    //objectives
+    public void getEscapePods(boolean escapePods){this.escapePods = escapePods;}
     //movement methods
     public void goSouth(){
         if(map.check(x,y+1)!=false)
