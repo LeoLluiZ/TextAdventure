@@ -16,8 +16,6 @@ public class main {
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         while(actions.getMoves()<end/*&&actions.getEscapePods()*/) {
-            System.out.println(actions.getX());
-            System.out.println(actions.getY());
             map.printMap(actions.getX(), actions.getY());
             actions.input();
         }
