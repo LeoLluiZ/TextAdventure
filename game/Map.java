@@ -7,11 +7,11 @@ public class Map {
     private final Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
             {null,null,null,new Object("Cockpit","cock",null),null,null,null},
-            {null,new Object("R1", "wire des",null),new Object("Door","door des",null),new Object("Hallway","hallway des",null),new Object("Door","door des",null),new Object("R2","room des",null),null,null},
+            {null,new Object("R1", "",null),new Object("Door","door des",null),new Object("Hallway","hallway des",null),new Object("Door","door des",null),new Object("R2","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
             {null,new Object("R3", "seal des",null),new Object("Door","door des",null),new Object("Hallway center","hallway des",null),new Object("Door","door des",null),new Object("R4","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
-            {null,null,new Object("R5","room des",null),new Object("Door","door des",null),new Object("Hall Center", "hall des",null),new Object("Door","door des",null),new Object("R6","map des",null),null},
+            {null,new Object("R5","room des",null),new Object("Door","door des",null),new Object("Hall Center", "hall des",null),new Object("Door","door des",null),new Object("R6","map des",null),null},
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
             {null,null,new Object("Hall Left", "hall left des",null),new Object("Hall Center", "hall des",null),new Object("Hall Right", "hall right des",null),null,null},
             {null,null,new Object("Door", "Door des",null),null,new Object("Door", "Door des",null),null},
@@ -232,6 +232,14 @@ public class Map {
                     - - - - - - - - - - - - - ||0000|     |\033[45;1m  \033[0m|     |0000|| - - - - - - - - - - - - -
                     - - - - - - - - - - - - - ||0000|=====    =====|0000|| - - - - - - - - - - - - -
                     """);
+        else if(x==1&&y==6)
+            System.out.print(
+                    """
+                            - - - - - - - - - - - - - ||0000|\033[45;1m     \033[0m|  |     |0000|| - - - - - - - - - - - - -
+                            - - - - - - - - - - - - - ||0000|\033[45;1m  R5 \033[0m      R6 |0000|| - - - - - - - - - - - - -
+                            - - - - - - - - - - - - - ||0000|\033[45;1m     \033[0m|  |     |0000|| - - - - - - - - - - - - -
+                            - - - - - - - - - - - - - ||0000|=====    =====|0000|| - - - - - - - - - - - -"""
+            );
         else if(x==5/*if door added: 5*/&&y==6)
         {
             System.out.print(

@@ -10,7 +10,7 @@ public class main {
         Actions actions=new Actions();
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-        System.out.println("- - - - - - - - - - - - - - - - - -"+"\033[36m"+" Intro test"+"\033[0m"+"- - - - - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - - - - -"+"\033[36m"+" You are on a spaceship which crashed. Now you have to survive."+"\033[0m"+"- - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         while(actions.getMoves()<20) {
