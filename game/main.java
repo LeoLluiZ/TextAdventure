@@ -12,7 +12,7 @@ public class main {
         int end = rnd.nextInt(110)+70;
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-        System.out.println("- - - - - - - - - - - - - - - - - -"+"\033[36m"+" You are on a spaceship which crashed. Now you have to survive."+"\033[0m"+"- - - - - - - - - - - - - - - - - -");
+        System.out.println("\033[36m"+"      You are on a spaceship which crashed. Now you have to survive."+"\033[0m");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         while(actions.getMoves()<end/*&&actions.getEscapePods()*/) {
