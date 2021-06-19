@@ -10,6 +10,7 @@ public class Actions {
     private final Map map=new Map();
     private Items[] inventory=new Items[100];
     private int inventorypos=0;
+    private int foundItemsR1=0;
     //getters
     public int getMoves(){
         return moves;
@@ -172,88 +173,64 @@ public class Actions {
                     return;
                 }
                 case "search","loot" -> {
-                    int countfounditems=0;
+
                     if(getX()==1&&getY()==2){ //for future item placement just add else if's with the respective x and y coordinates -leo
                         int findrate=r.nextInt(100)+1;
-                        System.out.println("Found items:");
                         if(map.getMapObject(1,2).getLoot()[0]!=null){
-                            if(findrate>0&&map.getMapObject(1,2).getLoot()[0].getFound()==false||map.getMapObject(1,2).getLoot()[0].getFound()==true){
-                                System.out.println("A green keycard.");
+                            if(findrate>0&&map.getMapObject(1,2).getLoot()[0].getFound()==false){
                                 map.getMapObject(1,2).getLoot()[0].foundItem();
-                                searched=true;
-                                countfounditems++;
+                                yesnotriggeritems=true;
                             }
                         }
 
-                        yesnotriggeritems=true;
-                        if(countfounditems==1){
-                            singlefound=true;
-                        }
-                        if(countfounditems>1){
-                            multiplefound=true;
-                        }
-                    }
-                     if(singlefound==true){
-                         System.out.println("Do you want to take the Item with you?");
-                     }
-                    //else if(){
 
-                   // }
-                    if(yesnotriggeritems==true&&singlefound==true) {
+                    }
+
+                    if(yesnotriggeritems==true) {
                         String inputt=keyboard.nextLine().toLowerCase();
-                        switch (inputt) {
-                            case "y","yes" -> {
-                                if(getX()==1&&getY()==2){
-                                    for(int a=0;a!=map.getMapObject(1,2).getLoot().length;a++){
-                                        if(map.getMapObject(1,2).getLoot()[a].getFound()==true){
-                                            inventory[inventorypos]=map.getMapObject(1,2).getLoot()[singleitemindex];
-                                            map.getMapObject(1,2).getLoot()[singleitemindex]=null;
-                                            inventorypos++;
+                        if(getX()==1&&getY()==2){
+                            int itemindex=0;
+                            for(int c=0;c!=map.getMapObject(1,2).getLoot().length;c++){
+                                if(map.getMapObject(1,2).getLoot()[c]!=null){
+                                    if(map.getMapObject(1,2).getLoot()[c].getFound()==true){
+
+                                        System.out.println("You have found : "+map.getMapObject(1,2).getLoot()[c].getNameItem()+"\n\n Do you want to take it with you?");
+
+                                        itemindex=map.getMapObject(1,2).returnItemIndex(map.getMapObject(1,2).getLoot()[c].getNameItem());
+
+                                        switch(inputt){
+
+                                            case "y","yes" -> {
+                                                Items item=new Items();
+
+                                                item=map.getMapObject(1,2).getLoot()[c];
+                                                inventory[inventorypos]=item;
+
+                                                map.getMapObject(1,2).getLoot()[c]=null;
+
+                                                this.inventorypos++;
+                                                System.out.println("working");
+                                                return;
+                                            }
+
+                                            case "n","no" ->{
+                                                return;
+                                            }
                                         }
                                     }
-                                  singlefound=false;
+
                                 }
-                                System.out.println("working");
-                                return;
+
+
                             }
-                            case "n","no" ->{
-                                return;
-                            }
+
+
                         }
 
-                    }
-                    if(yesnotriggeritems==true&&multiplefound==true){
-                        String inputt=keyboard.nextLine().toLowerCase();
-                        switch (inputt) {
-                            case "y","yes" -> {
-                                if(getX()==1&&getY()==2){
 
-                                    multiplefound=false;
-                                }
-                                System.out.println("working");
-                                return;
-                            }
-                            case "n","no" ->{
-                                return;
-                            }
-                        }
                     }
-                    if(yesnotriggeritems==false){
-                        System.out.println("This place looks looted");
-                        return;
-                    }
-                    if(searched==true&&map.getMapObject(getX(),getY()).getLoot()!=null){
-                        int counter=0;
-                        for(int b=0;b!=map.getMapObject(getX(),getY()).getLoot().length;b++){
-                            if(map.getMapObject(getX(),getY()).getLoot()[b]!=null){
-                                counter++;
-                            }
-                        }
-                        if(counter>0){
-                            System.out.println("This place looks looted");
-                            return;
-                        }
-                    }
+
+
 
 
                 }
