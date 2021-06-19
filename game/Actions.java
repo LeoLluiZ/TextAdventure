@@ -118,6 +118,42 @@ public class Actions {
     {
         System.out.println("\fMethod to help player if needed."); // nur ein Befehl auf einmal, groß-klein schreibung ist egal
     }
+    public void list(){
+        boolean y=false;
+        if(map.getMapObject(getX(),getY()).getLoot()==null){
+            System.out.println("This part of the ship looks quite empty");
+        }
+
+
+
+            if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                for(int i=0;i!=map.getMapObject(getX(),getY()).getLoot().length;i++){
+                    if(y==false){
+                        System.out.println("--------------------------------------------------------|");
+                        System.out.println("You have found the following things : ");
+                        y=true;
+                        if(map.getMapObject(getX(),getY()).getLoot()[i].getFound()==true){
+                            System.out.println(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem());
+                        }
+                    }
+                    if(y==true){
+                        System.out.print("--------------------------------------------------------|\n");
+                    }
+            }
+                if(y==false&&map.getMapObject(getX(),getY()).getLoot()!=null)
+            System.out.println("This rooms seems very untidy");
+        }
+
+    }
+    public int returnItemIndex(String item){
+        int i=-1;
+        for(i=0;i!=map.getMapObject(getX(),getY()).getLoot().length;i++){
+            if(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem().equalsIgnoreCase(item)){
+                return i;
+            }
+        }
+        return i;
+    }
     /*
     input with "text recognition":
     A input is taked put to lower case and split into words, then the programm iterates throgh them trying to find a keyword. If a keyword is found the programm will search for further instructions if required
@@ -158,6 +194,7 @@ public class Actions {
                             }
 
 
+
                         }
                     System.out.println("Input couldn't be recognized");
                     return;
@@ -172,67 +209,48 @@ public class Actions {
                     this.printInventory();
                     return;
                 }
+                case "list" ->{
+                    list();
+                    return;
+                }
+                case "take" -> {
+
+                    if(map.getMapObject(getX(),getY()).getLoot()==null){
+                        return;
+                    }
+                    else if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                        String v=input.split("take ")[1];
+                        int itemindex=returnItemIndex(input.split("take ")[1]);
+                        if(itemindex==-1){
+                            System.out.println("\""+input.split("take ")[1]+"\" is not one of the found things");
+                            return;
+                        }
+                        else if(i>=0){
+                            Items item=map.getMapObject(getX(),getY()).getLoot()[i];
+                            map.getMapObject(getX(),getY()).getLoot()[i]=null;
+                            inventory[inventorypos]=item;
+                            inventorypos++;
+                            return;
+                        }
+                    }
+
+                }
                 case "search","loot" -> {
 
                     if(getX()==1&&getY()==2){ //for future item placement just add else if's with the respective x and y coordinates -leo
-                        int findrate=r.nextInt(100)+1;
-                        if(map.getMapObject(1,2).getLoot()[0]!=null){
-                            if(findrate>0&&map.getMapObject(1,2).getLoot()[0].getFound()==false){
-                                map.getMapObject(1,2).getLoot()[0].foundItem();
-                                yesnotriggeritems=true;
+
+
+                        if(map.getMapObject(getX(),getY()).getLoot()[0]!=null){
+                            int findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
+                            if(map.getMapObject(1,2).getLoot()[findrate].getFound()==false){
+                                map.getMapObject(1,2).getLoot()[findrate].foundItem();
+                                return;
+
                             }
                         }
 
 
                     }
-
-                    if(yesnotriggeritems==true) {
-                        String inputt=keyboard.nextLine().toLowerCase();
-                        if(getX()==1&&getY()==2){
-                            int itemindex=0;
-                            for(int c=0;c!=map.getMapObject(1,2).getLoot().length;c++){
-                                if(map.getMapObject(1,2).getLoot()[c]!=null){
-                                    if(map.getMapObject(1,2).getLoot()[c].getFound()==true){
-
-                                        System.out.println("You have found : "+map.getMapObject(1,2).getLoot()[c].getNameItem()+"\n\n Do you want to take it with you?");
-
-                                        itemindex=map.getMapObject(1,2).returnItemIndex(map.getMapObject(1,2).getLoot()[c].getNameItem());
-
-                                        switch(inputt){
-
-                                            case "y","yes" -> {
-                                                Items item=new Items();
-
-                                                item=map.getMapObject(1,2).getLoot()[c];
-                                                inventory[inventorypos]=item;
-
-                                                map.getMapObject(1,2).getLoot()[c]=null;
-
-                                                this.inventorypos++;
-                                                System.out.println("working");
-                                                return;
-                                            }
-
-                                            case "n","no" ->{
-                                                return;
-                                            }
-                                        }
-                                    }
-
-                                }
-
-
-                            }
-
-
-                        }
-
-
-                    }
-
-
-
-
                 }
                 default -> {
                 }
