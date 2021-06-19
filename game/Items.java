@@ -11,6 +11,9 @@ public class Items
         setDescription(description);
         setFound(found);
     }
+    public Items(){
+
+    }
     //Setters
     private void setName(String name)
     {

@@ -34,4 +34,13 @@ public class Object {
         return Loot;
 
     }
+    public int returnItemIndex(String item){
+        int i=-1;
+            for(i=0;i!=Loot.length;i++){
+                if(Loot[i].getNameItem().equalsIgnoreCase(item)){
+                    return i;
+                }
+            }
+            return i;
+    }
 }
