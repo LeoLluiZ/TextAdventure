@@ -3,11 +3,13 @@ public class Items
 {
     private String Name;
     private String Description;
+    private boolean found;
     //Constructor
-    public Items(String name, String description)
+    public Items(String name, String description, boolean found)
     {
         setName(name);
         setDescription(description);
+        setFound(found);
     }
     //Setters
     private void setName(String name)
@@ -18,6 +20,9 @@ public class Items
     {
         Description = description;
     }
+    private void setFound(boolean set){
+        this.found=set;
+    }
     //Getters
     public String getNameItem()
     {
@@ -27,5 +32,10 @@ public class Items
     {
         return Description;
     }
-
+    public boolean getFound(){
+        return found;
+    }
+public void foundItem(){
+        found=true;
+}
 }

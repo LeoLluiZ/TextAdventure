@@ -6,8 +6,8 @@ public class Map {
     /* this is utterly fucking retarded.*/
     private final Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
-            {null,null,null,new Object("Cockpit","cock",null),null,null,null},
-            {null,new Object("R1", "",null),new Object("Door","door des",null),new Object("Hallway","hallway des",null),new Object("Door","door des",null),new Object("R2","room des",null),null,null},
+            {null,null,null,new Object("Cockpit","cock",null),null,null,null}, //new Items[]{new Items("Green Keycard","A keycard with a clearence level of green")}
+            {null,new Object("R1", "",new Items[]{new Items("Keycard for a Green Door","A keycard with a clearence level of green",false)}),new Object("Door","door des",null),new Object("Hallway","hallway des",null),new Object("Door","door des",null),new Object("R2","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
             {null,new Object("R3", "seal des",null),new Object("Door","door des",null),new Object("Hallway center","hallway des",null),new Object("Door","door des",null),new Object("R4","room des",null),null,null},
             {null,null,null,new Object("Door","door des",null),null,null,null},
@@ -15,7 +15,7 @@ public class Map {
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
             {null,new Object("Hall Left", "hall left des",null),new Object("Door","door des",null),new Object("Hall Center", "hall des",null),new Object("Door","door des",null),new Object("Hall Right", "hall right des",null),null},
             {null,new Object("Door", "Door des",null),null,null,null,new Object("Door", "Door des",null),null},
-            {null,new Object("Hall Left", "hall left des",null),new Object("Door", "Door des",null),new Object("Storage", "storage des",null),new Object("Door","door desu",null),new Object("Hall Right", "hall right des",null),null},
+            {null,new Object("Hall Left", "hall left des",null),new Object("Green Door", "Door des",null),new Object("Storage", "storage des",null),new Object("Green Door","door desu",null),new Object("Hall Right", "hall right des",null),null},
             {null,new Object("Door", "Door des",null),null,null,null,new Object("Door", "Door des",null),null},
             {null,new Object("Hall Left", "hall left des",null),new Object("Door","door des",null),new Object("Hall Center", "hall des",null),new Object("Door","door des",null),new Object("Hall Right", "hall des",null),null},
             {null,null,null,new Object("Hall Center", "hall des",null),null,null,null},
@@ -286,10 +286,10 @@ public class Map {
                             """);
         if(x==3&&y==8)
             System.out.print(
-                """ 
-                - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
-                - - - - - - - - - - -||000|           \033[45;1m    \033[0m            |000|| - - - - - - - - - -
-                """);
+                    """ 
+                    - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|           \033[45;1m    \033[0m            |000|| - - - - - - - - - -
+                    """);
         else if(x==1&&y==8)
             System.out.print(
                     """ 
@@ -312,26 +312,26 @@ public class Map {
             );
         if(x==1&&y==10)
             System.out.print(
-                """
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m+=====================+  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m                         |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|       Storage       |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
-                        - - - - - - - - - - -||000|\033[45;1m  \033[0m+=====================+  |000|| - - - - - - - - - -
-                        """
+                    """
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m+=====================+  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m                         |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|       Storage       |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m+=====================+  |000|| - - - - - - - - - -
+                            """
             );
         else if(x==3&&y==10)
             System.out.print(
@@ -422,18 +422,18 @@ public class Map {
                             """);
         else if(y>=12)
             System.out.print(
-                            """
-                            - - - - - - - - - - -||000|                           |000|| - - - - - - - - - -
-                            - -+==========- - - //0000+===========+   +===========+0000\\\\ - - -==========+ -
-                            """);
+                    """
+                    - - - - - - - - - - -||000|                           |000|| - - - - - - - - - -
+                    - -+==========- - - //0000+===========+   +===========+0000\\\\ - - -==========+ -
+                    """);
         if(x==3&&y==13)
             System.out.print(
-                """
-                - -||00000000\\\\ - -//00000000000000000|\033[45;1m   \033[0m|00000000000000000\\\\- - //00000000|| -
-                - -||000000000\\\\==//000000000000000000|\033[45;1m   \033[0m|000000000000000000\\\\==//000000000|| -
-                - -||000000000000000000000000000000000|\033[45;1m   \033[0m|000000000000000000000000000000000|| -
-               
-                """
+                    """
+                    - -||00000000\\\\ - -//00000000000000000|\033[45;1m   \033[0m|00000000000000000\\\\- - //00000000|| -
+                    - -||000000000\\\\==//000000000000000000|\033[45;1m   \033[0m|000000000000000000\\\\==//000000000|| -
+                    - -||000000000000000000000000000000000|\033[45;1m   \033[0m|000000000000000000000000000000000|| -
+                   
+                    """
             );
         else if(y>=13)
             System.out.print(
