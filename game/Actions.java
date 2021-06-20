@@ -152,7 +152,7 @@ public class Actions {
 
         boolean y=false;
         if(map.getMapObject(getX(),getY()).getLoot()==null){
-            System.out.println("This part of the ship looks quite empty");
+            System.out.println("You didn't find anything.");
         }
 
 
@@ -178,7 +178,7 @@ public class Actions {
             }
 
             if(y==false&&map.getMapObject(getX(),getY()).getLoot()!=null)
-                System.out.println("This rooms seems very untidy");
+                System.out.println("You may find something.");
         }
 
     }
@@ -333,7 +333,7 @@ public class Actions {
                 }
                 case "search","loot" -> {
                     if(map.getMapObject(getX(),getY()).getLoot()==null){
-                        System.out.println("This place seems very clean");
+                        System.out.println("There may be nothing to find.");
                         return;
                     }
                     if(map.getMapObject(getX(),getY()).getLoot()!=null){
