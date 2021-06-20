@@ -119,6 +119,7 @@ public class Actions {
         System.out.println("\fMethod to help player if needed."); // nur ein Befehl auf einmal, groß-klein schreibung ist egal
     }
     public void list(){
+
         boolean y=false;
         if(map.getMapObject(getX(),getY()).getLoot()==null){
             System.out.println("This part of the ship looks quite empty");
@@ -137,9 +138,12 @@ public class Actions {
                 if(i==map.getMapObject(getX(),getY()).getLoot().length-1){
                     y=true;
                 }
-                if(map.getMapObject(getX(),getY()).getLoot()[i].getFound()==true){
-                    System.out.println(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem());
+                if(map.getMapObject(getX(),getY()).getLoot()[i]!=null){
+                    if(map.getMapObject(getX(),getY()).getLoot()[i].getFound()==true){
+                        System.out.println(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem());
+                    }
                 }
+
                 if(y==true){
                     System.out.print("-------------------------------------------------------------------------------|\n");
                 }
@@ -152,10 +156,14 @@ public class Actions {
     }
     public int returnItemIndex(String item){
         int i=-1;
+
         for(i=0;i!=map.getMapObject(getX(),getY()).getLoot().length;i++){
-            if(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem().equalsIgnoreCase(item)){
-                return i;
+            if(map.getMapObject(getX(),getY()).getLoot()[i]!=null){
+                if(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem().equalsIgnoreCase(item)){
+                    return i;
+                }
             }
+
         }
         return i;
     }
@@ -223,14 +231,14 @@ public class Actions {
                     if(map.getMapObject(getX(),getY()).getLoot()==null){
                         return;
                     }
-                    else if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                    if(map.getMapObject(getX(),getY()).getLoot()!=null){
                         String v=input.split("take ")[1];
                         int itemindex=returnItemIndex(input.split("take ")[1]);
                         if(itemindex==-1){
                             System.out.println("\""+input.split("take ")[1]+"\" is not one of the found things");
                             return;
                         }
-                        else if(i>=0){
+                        if(i>=0){
                             Items item=map.getMapObject(getX(),getY()).getLoot()[i];
                             map.getMapObject(getX(),getY()).getLoot()[i]=null;
                             inventory[inventorypos]=item;
