@@ -126,22 +126,27 @@ public class Actions {
 
 
 
-            if(map.getMapObject(getX(),getY()).getLoot()!=null){
-                for(int i=0;i!=map.getMapObject(getX(),getY()).getLoot().length;i++){
-                    if(y==false){
-                        System.out.println("--------------------------------------------------------|");
-                        System.out.println("You have found the following things : ");
-                        y=true;
-                        if(map.getMapObject(getX(),getY()).getLoot()[i].getFound()==true){
-                            System.out.println(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem());
-                        }
-                    }
-                    if(y==true){
-                        System.out.print("--------------------------------------------------------|\n");
-                    }
+        if(map.getMapObject(getX(),getY()).getLoot()!=null){
+            boolean first=false;
+            for(int i=0;i!=map.getMapObject(getX(),getY()).getLoot().length;i++){
+                if(first==false){
+                    System.out.println("-------------------------------------------------------------------------------|");
+                    System.out.println("You have found the following things : ");
+                   first=true;
+                }
+                if(i==map.getMapObject(getX(),getY()).getLoot().length-1){
+                    y=true;
+                }
+                if(map.getMapObject(getX(),getY()).getLoot()[i].getFound()==true){
+                    System.out.println(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem());
+                }
+                if(y==true){
+                    System.out.print("-------------------------------------------------------------------------------|\n");
+                }
             }
-                if(y==false&&map.getMapObject(getX(),getY()).getLoot()!=null)
-            System.out.println("This rooms seems very untidy");
+
+            if(y==false&&map.getMapObject(getX(),getY()).getLoot()!=null)
+                System.out.println("This rooms seems very untidy");
         }
 
     }
@@ -240,11 +245,32 @@ public class Actions {
                     if(getX()==1&&getY()==2){ //for future item placement just add else if's with the respective x and y coordinates -leo
 
 
-                        if(map.getMapObject(getX(),getY()).getLoot()[0]!=null){
+                        if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                            boolean allfound=false;
+                            int countt=0;
+                            for(int o=0;o!=map.getMapObject(x,y).getLoot().length;o++){
+                                if(map.getMapObject(x,y).getLoot()[o].getFound()==false){
+                                    countt++;
+                                }
+                            }
+                            if(countt==0){
+                                allfound=true;
+                            }
+                            if(allfound==true){
+                                System.out.println("It seems you've looked through everything in this room");
+                                return;
+                            }
+
                             int findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
+                            if(map.getMapObject(x,y).getLoot()[findrate].getFound()==true&&allfound==false){
+                                   while(map.getMapObject(x,y).getLoot()[findrate].getFound()==false){
+                                       findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
+                                   }
+                            }
                             if(map.getMapObject(1,2).getLoot()[findrate].getFound()==false){
                                 map.getMapObject(1,2).getLoot()[findrate].foundItem();
                                 return;
+
 
                             }
                         }
