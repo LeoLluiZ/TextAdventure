@@ -201,12 +201,8 @@ public class Actions {
     */
     public void input()
     {
-        boolean searched=false;
-        int singleitemindex=0;
         Random r=new Random();
         boolean yesnotriggeritems=false;
-        boolean singlefound=false;
-        boolean multiplefound=false;
         Scanner keyboard=new Scanner(System.in);
         String input=keyboard.nextLine();
         input=input.toLowerCase();
@@ -252,6 +248,48 @@ public class Actions {
                 }
                 case "list" ->{
                     list();
+                    return;
+                }
+                case "examine" ->{
+                    String itemname="";
+                    String[] splittedinput=input.split(" ");
+                    if(input.split(" ").length<2){
+                        return;
+                    }
+                    else{
+                        itemname=itemname+splittedinput[1]+" ";
+                            for(int p=2;p!=splittedinput.length;p++){
+                                if(p==splittedinput.length-1){
+                                    itemname=itemname+splittedinput[p];
+                                }
+                                else{
+                                    itemname=itemname+splittedinput[p];
+                                    itemname=itemname+" ";
+                                }
+                            }
+
+                    }
+                    boolean objectnull=false;
+                    if(map.getMapObject(getX(),getY()).getLoot()==null){
+                        objectnull=true;
+                    }
+                    if (objectnull==false){
+                        for(int c=0;c!=map.getMapObject(getX(),getY()).getLoot().length;c++){
+                          if(map.getMapObject(getX(),getY()).getLoot()[c]!=null){
+                              if(map.getMapObject(getX(),getY()).getLoot()[c].getNameItem().equalsIgnoreCase(itemname)&&map.getMapObject(getX(),getY()).getLoot()[c].getFound()==true){
+                                  System.out.println(map.getMapObject(getX(),getY()).getLoot()[c].getDescriptionItem());
+                                  return;
+                              }
+                          }
+                        }
+                    }
+                    for(int h=0;h!=inventorypos;h++){
+                        if(inventory[h].getNameItem().equalsIgnoreCase(itemname)){
+                            System.out.println(inventory[h].getDescriptionItem());
+                            return;
+                        }
+                    }
+                    System.out.println("You do not have the Item \""+itemname+"\".");
                     return;
                 }
                 case "take" -> {
