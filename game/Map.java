@@ -2,20 +2,20 @@ package game;
 public class Map {
     private int maxY = 0;
     /*fix teleportation to other rooms*/
-    /* this is utterly fucking retarded.*/    
+    /* this is utterly fucking retarded.*/
     private final Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
             {null,null,null,new Object("Cockpit","You are in the cockpit. There are red lights flashing and alarms going off.",null),null,null,null}, //new Items[]{new Items("Green Keycard","A keycard with a clearence level of green")}
-            {null,new Object("R1", "You are in a dimly light room with stuff scattered everywhere. It seems like the ship was evacuated in a rush.",new Items[]{new Items("Keycard for a Green Door","A keycard with a green clearance level",false)}),new Object("Door",null,null),new Object("Hallway","The hallway is lit, but the lights are flickering. The ship must have been damaged.",null),new Object("Door",null,null),new Object("R2","There are tons of shelves, but there is almost nothing left.",null),null,null},
+            {null,new Object("R1", "You are in a dimly light room with stuff scattered everywhere. It seems like the ship was evacuated in a rush.",new Items[]{new Items("Keycard for a Green Door","A keycard with a green clearance level",false),new Items("Keycard for a blue Door","A keycard with a blue clearance level",false)}),new Object("Door",null,null),new Object("Hallway","The hallway is lit, but the lights are flickering. The ship must have been damaged.",null),new Object("Door",null,null),new Object("R2","There are tons of shelves, but there is almost nothing left.",null),null,null},
             {null,null,null,new Object("Door",null,null),null,null,null},
             {null,new Object("R3", "You are in a barely lit room. You can see some furniture, but it is too dark to see anything tangible. ",null),new Object("Door",null,null),new Object("Hallway center","You are in a hallway and the lights are still flickering.",null),new Object("Door",null,null),new Object("R4","You are in a dark office.",null),null,null},
             {null,null,null,new Object("Door",null,null),null,null,null},
             {null,new Object("R5","You are in a brightly lit room. It looks like it may be some kind of lab.",null),new Object("Door",null,null),new Object("Hall Center", "The amount of working lights in the hallway is decreasing.",null),new Object("Door",null,null),new Object("R6","It seems like you found the sleeping quarters.",null),null},
-            {null,null,null,new Object("Door","door des",null),null,null,null},
+            {null,null,null,new Object("Green Door","door des",null),null,null,null},
             {null,null,null,new Object("Hall Center", "It is getting increasingly more difficult to see.",null),null,null,null},
             {null,new Object("Hall Left", "The hallway is pitch dark you have to follow  the glowing indicators on the floor.",null),new Object("Door",null,null),new Object("Hall Center", "It is dark and you can't see.",null),new Object("Door",null,null),new Object("Hall Right", "You can barely see where you are going.",null),null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
-            {null,new Object("Hall Left", "You can barely recognize a door.",null),new Object("Green Door", null,null),new Object("Storage", "You are in a large storage bay filled with shelves, containers and other stuff. There are enough lights for you to see.",null),new Object("Green Door","door desu",null),new Object("Hall Right", "You can barely perceive a door and the hallway.",null),null},
+            {null,new Object("Hall Left", "You can barely recognize a door.",null),new Object("Storage Door", null,null),new Object("Storage", "You are in a large storage bay filled with shelves, containers and other stuff. There are enough lights for you to see.",null),new Object("Green Door","door desu",null),new Object("Hall Right", "You can barely perceive a door and the hallway.",null),null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
             {null,new Object("Hall Left", "You can see some light in the hallway in front of you.",null),new Object("Door",null,null),new Object("Hall Center", "You can see some working lights again.",null),new Object("Door",null,null),new Object("Hall Right", "You notice some light in front of you.",null),null},
             {null,null,null,new Object("Hall Center", "There are lights and you can see again.",null),null,null,null},
