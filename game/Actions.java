@@ -300,7 +300,7 @@ public class Actions {
                     }
                     if(map.getMapObject(getX(),getY()).getLoot()!=null){
                         int searchChance=r.nextInt(101);
-                        if(searchChance>75){
+                        if(searchChance>60){
                             System.out.println("You have not found anything");
                             return;
                         }
