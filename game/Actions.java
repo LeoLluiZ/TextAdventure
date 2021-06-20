@@ -90,24 +90,35 @@ public class Actions {
         }
         return false;
     }
+    public int charcount(String itemname){
+        char[] array=itemname.toCharArray();
+        return array.length;
+    }
+    public String spacingForPrintInventory(int charcount){
+        String returnString="";
+        for(int g=0;g!=78-charcount;g++){
+            returnString=returnString+" ";
+        }
+        return returnString;
+    }
     // the inventory of the player is printed in a table
     public void  printInventory()
     {
         for (Items items : inventory) {
             if (items != null) {
                 System.out.println("\f--------------------------------------------------------------------------------");
-                System.out.println("| " + items.getNameItem() + "                                      " + "|");
+                System.out.println("| " + items.getNameItem() + spacingForPrintInventory(charcount(items.getNameItem())) + "|");
                 for (int x = 0; x < items.getNameItem().length(); x++) {
-                    System.out.print(" ");
+                    System.out.print("");
                 }
-                System.out.print("|");
+
                 //spaces have to be
 
-            }
+            } //line  between |--| is around 79
             else
             {
                 System.out.println("---------------------------------------------------------------------------------");
-                System.out.println("| empty                                                                         |");
+                System.out.println("| The rest of your inventory is empty                                           |");
                 break;
             }
         }
