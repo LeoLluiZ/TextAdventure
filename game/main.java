@@ -9,14 +9,14 @@ public class main {
         Map map=new Map();
         Actions actions=new Actions();
         Random rnd = new Random();
-        int end = rnd.nextInt(110)+70;
+        int end = rnd.nextInt((110 - 70) + 1) + 70;
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-        System.out.println("\033[36m"+"      You are on a spaceship which crashed. Now you have to survive."+"\033[0m");
+        System.out.println("\033[36m"+"              You wake up on a abandoned spaceship. Try to survive."+"\033[0m");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-        while(actions.getMoves()<end/*&&actions.getEscapePods()*/) {
-            System.out.println("x: "+actions.getX()+"\ny: "+actions.getY());
+        System.out.println(map.getMapObject(3,1).getDescriptionObject());
+        while(actions.getMoves()<end/*&&actions.getEscapePods()*/){
             map.printMap(actions.getX(), actions.getY());
             actions.input();
         }
@@ -27,6 +27,7 @@ public class main {
         else
         {
             System.out.println("Mission complete");
+            System.out.println("You beat the game in "+actions.getMoves()+" moves.");
         }
     }
 }
