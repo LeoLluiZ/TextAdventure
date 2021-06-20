@@ -291,6 +291,16 @@ public class Actions {
                         }
                         if(map.getMapObject(1,2).getLoot()[findrate].getFound()==false){
                             map.getMapObject(1,2).getLoot()[findrate].foundItem();
+
+                            for(int k=0;k!=map.getMapObject(getX(),getY()).getLoot().length;k++){
+                                if(map.getMapObject(getX(),getY()).getLoot()[k]!=null){
+                                    if(map.getMapObject(getX(),getY()).getLoot()[k].getFound()==true){
+                                        list();
+                                        return;
+                                    }
+                                }
+
+                            }
                             return;
 
 
