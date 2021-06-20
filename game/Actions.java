@@ -104,12 +104,14 @@ public class Actions {
     // the inventory of the player is printed in a table
     public void  printInventory()
     {
+        int counter=0;
         for (Items items : inventory) {
             if (items != null) {
                 System.out.println("\f--------------------------------------------------------------------------------");
                 System.out.println("| " + items.getNameItem() + spacingForPrintInventory(charcount(items.getNameItem())) + "|");
                 for (int x = 0; x < items.getNameItem().length(); x++) {
                     System.out.print("");
+                    counter++;
                 }
 
                 //spaces have to be
@@ -117,12 +119,23 @@ public class Actions {
             } //line  between |--| is around 79
             else
             {
-                System.out.println("---------------------------------------------------------------------------------");
-                System.out.println("| The rest of your inventory is empty                                           |");
-                break;
+                if(counter>0){
+                    System.out.println("---------------------------------------------------------------------------------");
+                    System.out.println("| The rest of your inventory is empty                                           |");
+                    System.out.println("---------------------------------------------------------------------------------\n");
+                    break;
+                }
+                if(counter==0){
+                    System.out.println("---------------------------------------------------------------------------------");
+                    System.out.println("| Your inventory is empty                                                       |");
+                    System.out.println("---------------------------------------------------------------------------------");
+                    break;
+                }
+
             }
+
         }
-        System.out.println("---------------------------------------------------------------------------------\n");
+
     }
     //help method: displays a little bit of general advice to help the player
     public void help()
@@ -150,9 +163,9 @@ public class Actions {
                 }
                 if(map.getMapObject(getX(),getY()).getLoot()[i]!=null){
                     if(map.getMapObject(getX(),getY()).getLoot()[i].getFound()==true){
-                        System.out.println("|-------------------------------------------------------------------------------|");
+                        System.out.println("---------------------------------------------------------------------------------");
                         System.out.println("| " + map.getMapObject(getX(),getY()).getLoot()[i].getNameItem() + spacingForPrintInventory(charcount(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem())) + "|");
-                        System.out.println("|-------------------------------------------------------------------------------|");
+                        System.out.println("---------------------------------------------------------------------------------");
 
                     }
                 }
@@ -251,6 +264,9 @@ public class Actions {
                             return;
                         }
                         if(itemindex>=0){
+                            if(map.getMapObject(getX(),getY()).getLoot()[itemindex].getFound()==false){
+                                System.out.println("\""+input.split("take ")[1]+"\" is not one of the found things");
+                            }
                             Items item=map.getMapObject(getX(),getY()).getLoot()[itemindex];
                             map.getMapObject(getX(),getY()).getLoot()[itemindex]=null;
                             inventory[inventorypos]=item;
@@ -266,12 +282,20 @@ public class Actions {
                         return;
                     }
                     if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                        int searchChance=r.nextInt(101);
+                        if(searchChance>75){
+                            System.out.println("You have not found anything");
+                            return;
+                        }
                         boolean allfound=false;
                         int countt=0;
                         for(int o=0;o!=map.getMapObject(x,y).getLoot().length;o++){
-                            if(map.getMapObject(x,y).getLoot()[o].getFound()==false){
-                                countt++;
+                            if(map.getMapObject(x,y).getLoot()[o]!=null){
+                                if(map.getMapObject(x,y).getLoot()[o].getFound()==false){
+                                    countt++;
+                                }
                             }
+
                         }
                         if(countt==0){
                             allfound=true;
