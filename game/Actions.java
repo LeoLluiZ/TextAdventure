@@ -266,6 +266,7 @@ public class Actions {
                         if(itemindex>=0){
                             if(map.getMapObject(getX(),getY()).getLoot()[itemindex].getFound()==false){
                                 System.out.println("\""+input.split("take ")[1]+"\" is not one of the found things");
+                                return;
                             }
                             Items item=map.getMapObject(getX(),getY()).getLoot()[itemindex];
                             map.getMapObject(getX(),getY()).getLoot()[itemindex]=null;
