@@ -24,6 +24,11 @@ public class Map {
             {null,null,null,null,null,null,null}};
 
     //Setters
+    //Getters
+    public Object[][] getMap()
+    {
+        return this.map;
+    }
     public boolean check(int x, int y){
 
         if(map[y][x] != null) {

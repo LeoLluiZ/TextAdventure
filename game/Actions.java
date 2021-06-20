@@ -395,11 +395,30 @@ public class Actions {
 
 
                 }
+                case "use" -> {
+
+
+                }
                 default -> {
                 }
             }
         }
         System.out.println("Input couldn't be recognized");
+    }
+    public void teleport(String teleportLocation){
+        String currentLocation = map.getMapObject(x,y).getNameObject();
+        for(int i = 0;i < map.getMap().length;i++)
+        {
+            for(int j = 0;j < map.getMap()[i].length;j++)
+            {
+                if(map.getMapObject(j,i).getNameObject().equalsIgnoreCase(teleportLocation))
+                {
+                    x = j;y = i;
+                    break;
+                }
+            }
+        }
+
     }
 
 }
