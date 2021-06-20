@@ -307,13 +307,21 @@ public class Actions {
                         }
 
                         int findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
-                        if(map.getMapObject(x,y).getLoot()[findrate].getFound()==true&&allfound==false){
-                            while(map.getMapObject(x,y).getLoot()[findrate].getFound()==true){
+                        if(map.getMapObject(x,y).getLoot()[findrate]==null){
+                            while(map.getMapObject(x,y).getLoot()[findrate]==null){
                                 findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
                             }
                         }
-                        if(map.getMapObject(1,2).getLoot()[findrate].getFound()==false){
-                            map.getMapObject(1,2).getLoot()[findrate].foundItem();
+                        if(map.getMapObject(x,y).getLoot()[findrate]!=null){
+                            if(map.getMapObject(x,y).getLoot()[findrate].getFound()==true&&allfound==false){
+                                while(map.getMapObject(x,y).getLoot()[findrate].getFound()==true){
+                                    findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
+                                }
+                            }
+                        }
+
+                        if(map.getMapObject(getX(),getY()).getLoot()[findrate].getFound()==false){
+                            map.getMapObject(getX(),getY()).getLoot()[findrate].foundItem();
 
                             for(int k=0;k!=map.getMapObject(getX(),getY()).getLoot().length;k++){
                                 if(map.getMapObject(getX(),getY()).getLoot()[k]!=null){
