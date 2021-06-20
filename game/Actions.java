@@ -241,10 +241,10 @@ public class Actions {
 
                 }
                 case "search","loot" -> {
-
-                    if(getX()==1&&getY()==2){ //for future item placement just add else if's with the respective x and y coordinates -leo
-
-
+                    if(map.getMapObject(getX(),getY()).getLoot()==null){
+                        System.out.println("This place seems very clean");
+                        return;
+                    }
                         if(map.getMapObject(getX(),getY()).getLoot()!=null){
                             boolean allfound=false;
                             int countt=0;
@@ -263,7 +263,7 @@ public class Actions {
 
                             int findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
                             if(map.getMapObject(x,y).getLoot()[findrate].getFound()==true&&allfound==false){
-                                   while(map.getMapObject(x,y).getLoot()[findrate].getFound()==false){
+                                   while(map.getMapObject(x,y).getLoot()[findrate].getFound()==true){
                                        findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
                                    }
                             }
@@ -276,7 +276,7 @@ public class Actions {
                         }
 
 
-                    }
+
                 }
                 default -> {
                 }
