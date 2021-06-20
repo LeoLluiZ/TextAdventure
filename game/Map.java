@@ -20,7 +20,8 @@ public class Map {
             {null,null,null,new Object("Hall Center", "There are lights and you can see again.",null),null,null,null},
             {null,new Object("Breach", "It looks like the  ship was hit here. The ship will get destroyed and you will die if you don't find a way out.",null),new Object("Door", null,null),new Object("Hall Center", "You are standing in the middle of a large intersection.",null),new Object("Door", null,null),new Object("Shrine","You find yourself in a holy sanctuary dimly lit by candles surrounding pictures of a sacred god.",null),null,null},
             {null,null,null,new Object("Hall Center", "You are getting close to the end of the ship.",null),null,null,null},
-            {null,null,null,new Object("Shuttle Bay", "You found the shuttle bay. There is an escape pod left. This may be your way out of here.",null)},null,null,null};
+            {null,null,null,new Object("Shuttle Bay", "You found the shuttle bay. There is an escape pod left. This may be your way out of here.",null),null,null,null},
+            {null,null,null,null,null,null,null}};
 
     //Setters
     public boolean check(int x, int y){
