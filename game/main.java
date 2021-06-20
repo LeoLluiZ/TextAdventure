@@ -16,7 +16,7 @@ public class main {
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println(map.getMapObject(3,1).getDescriptionObject());
-        while(actions.getMoves()<end/*&&actions.getEscapePods()*/){
+        while(actions.getMoves()<end&&!actions.getEscapePod()){
             map.printMap(actions.getX(), actions.getY());
             actions.input();
         }

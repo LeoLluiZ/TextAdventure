@@ -6,7 +6,7 @@ public class Actions {
     private int moves=0;
     private int y=1;
     private int x=3;
-    private boolean escapePods = false;
+    private boolean escapePod = false;
     private final Map map=new Map();
     private Items[] inventory=new Items[100];
     private int inventorypos=0;
@@ -19,9 +19,15 @@ public class Actions {
     public int getY(){
         return y;
     }
-    public boolean getEscapePods(){return escapePods;}
     //objectives
-    public void getEscapePods(boolean escapePods){this.escapePods = escapePods;}
+    public boolean getEscapePod(){return escapePod;}
+    public void setEscapePod(){
+        if(x==3&&y==16/*&&this.searchInventory()*/)
+            escapePod=true;
+        else{
+            System.out.println("Not possible");
+        }
+    }
     //movement methods
     public void goSouth(){
         if(map.check(x,y+1)!=false)
@@ -276,6 +282,16 @@ public class Actions {
                         }
                     }
 
+                }
+                case "escape" ->{this.setEscapePod();return;}
+                case "enter" -> {
+                    for (int x = 0; x < input.split(" ").length; x++)
+                        if(input.split(" ")[x]=="escape"&&input.split(" ")[x+1]=="pod") {
+                            this.setEscapePod();
+                            return;
+                        }
+                    System.out.println("Input couldn't be recognized");
+                    return;
                 }
                 case "search","loot" -> {
                     if(map.getMapObject(getX(),getY()).getLoot()==null){
