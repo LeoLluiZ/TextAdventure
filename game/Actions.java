@@ -133,7 +133,7 @@ public class Actions {
                 if(first==false){
                     System.out.println("-------------------------------------------------------------------------------|");
                     System.out.println("You have found the following things : ");
-                   first=true;
+                    first=true;
                 }
                 if(i==map.getMapObject(getX(),getY()).getLoot().length-1){
                     y=true;
@@ -159,13 +159,13 @@ public class Actions {
 
         for(i=0;i!=map.getMapObject(getX(),getY()).getLoot().length;i++){
             if(map.getMapObject(getX(),getY()).getLoot()[i]!=null){
-                if(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem().equalsIgnoreCase(item)){
+                if(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem().equalsIgnoreCase(item)==true){
                     return i;
                 }
             }
 
         }
-        return i;
+        return -1;
     }
     /*
     input with "text recognition":
@@ -238,9 +238,9 @@ public class Actions {
                             System.out.println("\""+input.split("take ")[1]+"\" is not one of the found things");
                             return;
                         }
-                        if(i>=0){
-                            Items item=map.getMapObject(getX(),getY()).getLoot()[i];
-                            map.getMapObject(getX(),getY()).getLoot()[i]=null;
+                        if(itemindex>=0){
+                            Items item=map.getMapObject(getX(),getY()).getLoot()[itemindex];
+                            map.getMapObject(getX(),getY()).getLoot()[itemindex]=null;
                             inventory[inventorypos]=item;
                             inventorypos++;
                             return;
@@ -253,35 +253,35 @@ public class Actions {
                         System.out.println("This place seems very clean");
                         return;
                     }
-                        if(map.getMapObject(getX(),getY()).getLoot()!=null){
-                            boolean allfound=false;
-                            int countt=0;
-                            for(int o=0;o!=map.getMapObject(x,y).getLoot().length;o++){
-                                if(map.getMapObject(x,y).getLoot()[o].getFound()==false){
-                                    countt++;
-                                }
-                            }
-                            if(countt==0){
-                                allfound=true;
-                            }
-                            if(allfound==true){
-                                System.out.println("It seems you've looked through everything in this room");
-                                return;
-                            }
-
-                            int findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
-                            if(map.getMapObject(x,y).getLoot()[findrate].getFound()==true&&allfound==false){
-                                   while(map.getMapObject(x,y).getLoot()[findrate].getFound()==true){
-                                       findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
-                                   }
-                            }
-                            if(map.getMapObject(1,2).getLoot()[findrate].getFound()==false){
-                                map.getMapObject(1,2).getLoot()[findrate].foundItem();
-                                return;
-
-
+                    if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                        boolean allfound=false;
+                        int countt=0;
+                        for(int o=0;o!=map.getMapObject(x,y).getLoot().length;o++){
+                            if(map.getMapObject(x,y).getLoot()[o].getFound()==false){
+                                countt++;
                             }
                         }
+                        if(countt==0){
+                            allfound=true;
+                        }
+                        if(allfound==true){
+                            System.out.println("It seems you've looked through everything in this room");
+                            return;
+                        }
+
+                        int findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
+                        if(map.getMapObject(x,y).getLoot()[findrate].getFound()==true&&allfound==false){
+                            while(map.getMapObject(x,y).getLoot()[findrate].getFound()==true){
+                                findrate=r.nextInt(map.getMapObject(x,y).getLoot().length);
+                            }
+                        }
+                        if(map.getMapObject(1,2).getLoot()[findrate].getFound()==false){
+                            map.getMapObject(1,2).getLoot()[findrate].foundItem();
+                            return;
+
+
+                        }
+                    }
 
 
 
