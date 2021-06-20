@@ -11,6 +11,7 @@ public class Map {
             {null,new Object("R3", "You are in a barely lit room. You can see some furniture, but it is too dark to see anything tangible. ",null),new Object("Door",null,null),new Object("Hallway center","You are in a hallway and the lights are still flickering.",null),new Object("Door",null,null),new Object("R4","You are in a dark office.",null),null,null},
             {null,null,null,new Object("Door",null,null),null,null,null},
             {null,new Object("R5","You are in a brightly lit room. It looks like it may be some kind of lab.",null),new Object("Door",null,null),new Object("Hall Center", "The amount of working lights in the hallway is decreasing.",null),new Object("Door",null,null),new Object("R6","It seems like you found the sleeping quarters.",null),null},
+            {null,null,null,new Object("Special door","door des",null),null,null,null},
             {null,null,null,new Object("Hall Center", "It is getting increasingly more difficult to see.",null),null,null,null},
             {null,new Object("Hall Left", "The hallway is pitch dark you have to follow  the glowing indicators on the floor.",null),new Object("Door",null,null),new Object("Hall Center", "It is dark and you can't see.",null),new Object("Door",null,null),new Object("Hall Right", "You can barely see where you are going.",null),null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
@@ -192,7 +193,7 @@ public class Map {
                             - - - - - - - - - - - - - ||0000|     |  |     |0000|| - - - - - - - - - - - - -
                             - - - - - - - - - - - - - ||0000|=====   ======|0000|| - - - - - - - - - - - - -
                             """);
-        if(x==3&&y==7)
+        if(x==3&&y==8)
         {
             System.out.print(
                     """
@@ -204,7 +205,7 @@ public class Map {
                             - - - - - - - - - - - ||000+========== \033[45;1m  \033[0m ==========+000|| - - - - - - - - - - -
                             """);
         }
-        else if(maxY>=7)
+        else if(maxY>=8)
             System.out.print(
                     """
                             - - - - - - - - - - - - - ||0000|00000|  |000000|0000||- - - - - - - - - - - - -
@@ -214,25 +215,25 @@ public class Map {
                             - - - - - - - - - - - //00000000000000|  |000000000000000\\\\- - - - - - - - - - -
                             - - - - - - - - - - -||000000000000000|  |0000000000000000|| - - - - - - - - - -
                             """);
-        if(x==3&&y==8)
+        if(x==3&&y==9)
             System.out.print(
                     """ 
                     - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
                     - - - - - - - - - - -||000|           \033[45;1m    \033[0m            |000|| - - - - - - - - - -
                     """);
-        else if(x==1&&y==8)
+        else if(x==1&&y==9)
             System.out.print(
                     """ 
                     - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
                     - - - - - - - - - - -||000|\033[45;1m           \033[0m                |000|| - - - - - - - - - -
                     """);
-        else if(x==5&&y==8)
+        else if(x==5&&y==9)
             System.out.print(
                     """ 
                             - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
                             - - - - - - - - - - -||000|               \033[45;1m            \033[0m|000|| - - - - - - - - - -
                             """);
-        else if(maxY>=8)
+        else if(maxY>=9)
             System.out.print(
                     """
                     - - - - - - - - - - -||000+==========      ===========+000|| - - - - - - - - - -
@@ -240,7 +241,7 @@ public class Map {
                     """
 
             );
-        if(x==1&&y==10)
+        if(x==1&&y==11)
             System.out.print(
                     """
                             - - - - - - - - - - -||000|\033[45;1m  \033[0m+=====================+  |000|| - - - - - - - - - -
@@ -263,7 +264,7 @@ public class Map {
                             - - - - - - - - - - -||000|\033[45;1m  \033[0m+=====================+  |000|| - - - - - - - - - -
                             """
             );
-        else if(x==3&&y==10)
+        else if(x==3&&y==11)
             System.out.print(
                     """
                             - - - - - - - - - - -||000|  +=====================+  |000|| - - - - - - - - - -
@@ -286,7 +287,7 @@ public class Map {
                             - - - - - - - - - - -||000|  +=====================+  |000|| - - - - - - - - - -
                             """
             );
-        else if(x==5&&y==10)
+        else if(x==5&&y==11)
             System.out.print(
                     """
                 - - - - - - - - - - -||000|  +=====================+\033[45;1m  \033[0m|000|| - - - - - - - - - -
@@ -308,7 +309,7 @@ public class Map {
                 - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
                 - - - - - - - - - - -||000|  +=====================+\033[45;1m  \033[0m|000|| - - - - - - - - - -
                 """);
-        else if(maxY>=10)
+        else if(maxY>=11)
             System.out.print(
                     """
                     - - - - - - - - - - -||000|  +=====================+  |000|| - - - - - - - - - -
@@ -330,33 +331,33 @@ public class Map {
                     - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
                     - - - - - - - - - - -||000|  +=====================+  |000|| - - - - - - - - - -
                     """);
-        if(x==1&&y==12)
+        if(x==1&&y==13)
             System.out.print(
                     """
                             - - - - - - - - - - -||000|\033[45;1m           \033[0m                |000|| - - - - - - - - - -
                             - -+==========- - - //0000+===========+   +===========+0000\\\\ - - -==========+ -
                             """
             );
-        else if(x==3&&y==12)
+        else if(x==3&&y==13)
             System.out.print(
                     """
                             - - - - - - - - - - -||000|            \033[45;1m   \033[0m            |000|| - - - - - - - - - -
                             - -+==========- - - //0000+===========+   +===========+0000\\\\ - - -==========+ - 
                             """
             );
-        else if(x==5&&y==12)
+        else if(x==5&&y==13)
             System.out.print(
                     """
                             - - - - - - - - - - -||000|                \033[45;1m           \033[0m|000|| - - - - - - - - - -
                             - -+==========- - - //0000+===========+   +===========+0000\\\\ - - -==========+ - 
                             """);
-        else if(maxY>=12)
+        else if(maxY>=13)
             System.out.print(
                     """
                     - - - - - - - - - - -||000|                           |000|| - - - - - - - - - -
                     - -+==========- - - //0000+===========+   +===========+0000\\\\ - - -==========+ -
                     """);
-        if(x==3&&y==13)
+        if(x==3&&y==14)
             System.out.print(
                     """
                     - -||00000000\\\\ - -//00000000000000000|\033[45;1m   \033[0m|00000000000000000\\\\- - //00000000|| -
@@ -365,7 +366,7 @@ public class Map {
                    
                     """
             );
-        else if(maxY>=13)
+        else if(maxY>=14)
             System.out.print(
                     """
                             - -||00000000\\\\ - -//00000000000000000|   |00000000000000000\\\\- - //00000000|| -
@@ -373,7 +374,7 @@ public class Map {
                             - -||000000000000000000000000000000000|   |000000000000000000000000000000000|| -
                             """
             );
-        if(x==3&&y==14)
+        if(x==3&&y==15)
             System.out.print(
                     """
                             - -||000000000O000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -389,7 +390,7 @@ public class Map {
                             """
 
             );
-        else if(x==1&&y==14)
+        else if(x==1&&y==15)
             System.out.print(
                     """
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -403,7 +404,7 @@ public class Map {
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| - 
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """);
-        else if(x==5&&y==14)
+        else if(x==5&&y==15)
             System.out.print(
                     """
                             - -||000000000O000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -417,7 +418,7 @@ public class Map {
                             - -||0000000000000+==========+00000000|   |0000000+===========+0000000000000|| - 
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """);
-        else if(maxY>=14)
+        else if(maxY>=15)
             System.out.print(
                     """
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -432,7 +433,7 @@ public class Map {
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """
             );
-        if(x==3&&y==15)
+        if(x==3&&y==16)
             System.out.print(
                     """
                             - -  \\\\00000000000000000|\033[45;1m                               \033[0m|00000000000000000// - -
@@ -447,7 +448,7 @@ public class Map {
                             - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                             """
             );
-        else if(maxY>=15)
+        else if(maxY>=16)
             System.out.println(
                     """
                             - -  \\\\00000000000000000|                               |00000000000000000// - -
