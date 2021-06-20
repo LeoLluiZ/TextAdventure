@@ -106,7 +106,7 @@ public class Actions {
     {
         for (Items items : inventory) {
             if (items != null) {
-                System.out.println("--------------------------------------------------------------------------------");
+                System.out.println("\f--------------------------------------------------------------------------------");
                 System.out.println("| " + items.getNameItem() + spacingForPrintInventory(charcount(items.getNameItem())) + "|");
                 for (int x = 0; x < items.getNameItem().length(); x++) {
                     System.out.print("");
@@ -131,25 +131,37 @@ public class Actions {
     }
     public void list(){
 
-        for (Items items : map.getMapObject(x,y).getLoot()) {
-            if (items != null) {
-                System.out.println("---------------------------------------------------------------------------------");
-                System.out.println("| " + items.getNameItem() + spacingForPrintInventory(charcount(items.getNameItem())) + "|");
-                for (int x = 0; x < items.getNameItem().length(); x++) {
-                    System.out.print("");
-                }
-
-                //spaces have to be
-
-            } //line  between |--| is around 79
-            else
-            {
-                System.out.println("---------------------------------------------------------------------------------");
-                System.out.println("| The rest of your inventory is empty                                           |");
-                break;
-            }
+        boolean y=false;
+        if(map.getMapObject(getX(),getY()).getLoot()==null){
+            System.out.println("This part of the ship looks quite empty");
         }
-        System.out.println("---------------------------------------------------------------------------------\n");
+
+
+
+        if(map.getMapObject(getX(),getY()).getLoot()!=null){
+            boolean first=false;
+            for(int i=0;i!=map.getMapObject(getX(),getY()).getLoot().length;i++){
+                if(first==false){
+                    System.out.println("| You have found the following things :                                         |");
+                    first=true;
+                }
+                if(i==map.getMapObject(getX(),getY()).getLoot().length-1){
+                    y=true;
+                }
+                if(map.getMapObject(getX(),getY()).getLoot()[i]!=null){
+                    if(map.getMapObject(getX(),getY()).getLoot()[i].getFound()==true){
+                        System.out.println("|-------------------------------------------------------------------------------|");
+                        System.out.println("| " + map.getMapObject(getX(),getY()).getLoot()[i].getNameItem() + spacingForPrintInventory(charcount(map.getMapObject(getX(),getY()).getLoot()[i].getNameItem())) + "|");
+                        System.out.println("|-------------------------------------------------------------------------------|");
+
+                    }
+                }
+            }
+
+            if(y==false&&map.getMapObject(getX(),getY()).getLoot()!=null)
+                System.out.println("This rooms seems very untidy");
+        }
+
     }
     public int returnItemIndex(String item){
         int i=-1;
