@@ -243,6 +243,9 @@ public class Actions {
                         return;
                     }
                     if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                        if(input.split("take ").length<2){
+                            return;
+                        }
                         String v=input.split("take ")[1];
                         int itemindex=returnItemIndex(input.split("take ")[1]);
                         if(itemindex==-1){
