@@ -11,7 +11,7 @@ public class Map {
             {null,new Object("R3", "You are in a barely lit room. You can see some furniture, but it is too dark to see anything tangible. ",null),new Object("Door",null,null),new Object("Hallway center","You are in a hallway and the lights are still flickering.",null),new Object("Door",null,null),new Object("R4","You are in a dark office.",null),null,null},
             {null,null,null,new Object("Door",null,null),null,null,null},
             {null,new Object("R5","You are in a brightly lit room. It looks like it may be some kind of lab.",null),new Object("Door",null,null),new Object("Hall Center", "The amount of working lights in the hallway is decreasing.",null),new Object("Door",null,null),new Object("R6","It seems like you found the sleeping quarters.",null),null},
-            {null,null,null,new Object("Special door","door des",null),null,null,null},
+            {null,null,null,new Object("Door","door des",null),null,null,null},
             {null,null,null,new Object("Hall Center", "It is getting increasingly more difficult to see.",null),null,null,null},
             {null,new Object("Hall Left", "The hallway is pitch dark you have to follow  the glowing indicators on the floor.",null),new Object("Door",null,null),new Object("Hall Center", "It is dark and you can't see.",null),new Object("Door",null,null),new Object("Hall Right", "You can barely see where you are going.",null),null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
