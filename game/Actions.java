@@ -413,13 +413,17 @@ public class Actions {
 
                 }
                 case "use" -> {
-                    if(input.contains("teleportation device") || input.contains("teleporter") || input.contains("teleport") && countTel <= 5)
+                    if((input.contains("teleportation device") || input.contains("teleporter") || input.contains("teleport")) && (searchInventory("teleportation device") || searchInventory("teleporter")) && countTel <= 5)
                     {
                         System.out.println("Where do you want to teleport?");
                         String inputTelLoc = keyboard.nextLine();
                         teleport(inputTelLoc);
                         countTel++;
                         System.out.println("You have "+(5-countTel)+" teleportations left.");
+                    }
+                    else
+                    {
+                        System.out.println("No teleportation device in your inventory.");
                     }
                     if(input.contains("pod") || input.contains("shutlle") || input.contains("escape pod"))
                         this.setEscapePod();
