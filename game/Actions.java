@@ -343,6 +343,16 @@ public class Actions {
                         return;
                     }
                     if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                        boolean alltaken=true;
+                        for(int u=0;u!=map.getMapObject(getX(),getY()).getLoot().length;u++){
+                            if(map.getMapObject(getX(),getY()).getLoot()[u]!=null){
+                                alltaken=false;
+                            }
+                        }
+                        if(alltaken==true){
+                            System.out.println("There may be nothing to find.");
+                            return;
+                        }
                         int searchChance=r.nextInt(101);
                         if(searchChance>60){
                             System.out.println("You have not found anything");
