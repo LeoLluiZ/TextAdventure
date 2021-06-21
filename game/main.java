@@ -18,7 +18,7 @@ public class main {
         System.out.println(map.getMapObject(3,1).getDescriptionObject());
         while(actions.getMoves()<end&&!actions.getEscapePod()){
             if(actions.getMoves()%8==0)
-                System.out.println("The ship is creeking.");
+                System.out.println("The ship is creeking!");
             map.printMap(actions.getX(), actions.getY());
             actions.input();
         }

@@ -22,10 +22,17 @@ public class Actions {
     //objectives
     public boolean getEscapePod(){return escapePod;}
     public void setEscapePod(){
-        if(x==3&&y==16/*&&this.searchInventory()*/)
+        if(x==3&&y==16)
+        {
+        if(this.searchInventory("crowbar")==true)
             escapePod=true;
+        else
+        {
+            System.out.println("You can't enter the escape pod the door is stuck.");
+        }
+        }
         else{
-            System.out.println("Not possible");
+            System.out.println("Not possible from here.");
         }
     }
     //movement methods
@@ -322,13 +329,12 @@ public class Actions {
 
                 }
                 case "escape" ->{this.setEscapePod();return;}
-                case "enter" -> {
-                    for (int x = 0; x < input.split(" ").length; x++)
-                        if(input.split(" ")[x]=="escape"&&input.split(" ")[x+1]=="pod") {
-                            this.setEscapePod();
-                            return;
-                        }
-                    System.out.println("Input couldn't be recognized");
+                case "enter" -> {//shuttle, espace pod, pod
+                    if(input.contains("pod") || input.contains("shutlle") || input.contains("escape pod"))
+                        this.setEscapePod();
+                        else{
+                        System.out.println("Input couldn't be recognized");
+                    }
                     return;
                 }
                 case "search","loot" -> {
@@ -397,9 +403,16 @@ public class Actions {
                 }
                 case "use" -> {
                     if(input.contains("teleportation device") || input.contains("teleporter") || input.contains("teleport"))
+                    {
                         System.out.println("Where do you want to teleport?");
                         String inputTelLoc = keyboard.nextLine();
                         teleport(inputTelLoc);
+                    }
+                    if(input.contains("pod") || input.contains("shutlle") || input.contains("escape pod"))
+                        this.setEscapePod();
+                    else{
+                        System.out.println("Input couldn't be recognized");
+                    }
                     return;
                 }
                 default -> {
