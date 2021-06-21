@@ -8,7 +8,7 @@ public class Actions {
     private int x=3;
     private boolean escapePod = false;
     private final Map map=new Map();
-    private Items[] inventory=new Items[100];
+    private Items[] inventory=new Items[7];
     private int inventorypos=0;
     private int foundItemsR1=0;
     private int countTel = 0;
@@ -451,5 +451,4 @@ public class Actions {
         }
 
     }
-
 }
