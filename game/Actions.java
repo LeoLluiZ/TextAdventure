@@ -8,9 +8,10 @@ public class Actions {
     private int x=3;
     private boolean escapePod = false;
     private final Map map=new Map();
-    private Items[] inventory=new Items[100];
+    private Items[] inventory=new Items[7];
     private int inventorypos=0;
     private int foundItemsR1=0;
+    private int countTel = 0;
     //getters
     public int getMoves(){
         return moves;
@@ -495,11 +496,17 @@ public class Actions {
 
                 }
                 case "use" -> {
-                    if(input.contains("teleportation device") || input.contains("teleporter") || input.contains("teleport"))
+                    if((input.contains("teleportation device") || input.contains("teleporter") || input.contains("teleport")) && (searchInventory("teleportation device") || searchInventory("teleporter")) && countTel <= 3)
                     {
                         System.out.println("Where do you want to teleport?");
                         String inputTelLoc = keyboard.nextLine();
                         teleport(inputTelLoc);
+                        countTel++;
+                        System.out.println("You have "+(3-countTel)+" teleportations left.");
+                    }
+                    else
+                    {
+                        System.out.println("No teleportation device in your inventory.");
                     }
                     if(input.contains("pod") || input.contains("shutlle") || input.contains("escape pod"))
                         this.setEscapePod();
@@ -531,5 +538,4 @@ public class Actions {
         }
 
     }
-
 }
