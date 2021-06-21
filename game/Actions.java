@@ -11,6 +11,7 @@ public class Actions {
     private Items[] inventory=new Items[100];
     private int inventorypos=0;
     private int foundItemsR1=0;
+    private int countTel = 0;
     //getters
     public int getMoves(){
         return moves;
@@ -412,11 +413,13 @@ public class Actions {
 
                 }
                 case "use" -> {
-                    if(input.contains("teleportation device") || input.contains("teleporter") || input.contains("teleport"))
+                    if(input.contains("teleportation device") || input.contains("teleporter") || input.contains("teleport") && countTel <= 5)
                     {
                         System.out.println("Where do you want to teleport?");
                         String inputTelLoc = keyboard.nextLine();
                         teleport(inputTelLoc);
+                        countTel++;
+                        System.out.println("You have "+(5-countTel)+" teleportations left.");
                     }
                     if(input.contains("pod") || input.contains("shutlle") || input.contains("escape pod"))
                         this.setEscapePod();
