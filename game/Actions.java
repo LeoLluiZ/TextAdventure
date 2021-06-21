@@ -396,8 +396,11 @@ public class Actions {
 
                 }
                 case "use" -> {
-
-
+                    if(input.contains("teleportation device") || input.contains("teleporter") || input.contains("teleport"))
+                        System.out.println("Where do you want to teleport?");
+                        String inputTelLoc = keyboard.nextLine();
+                        teleport(inputTelLoc);
+                    return;
                 }
                 default -> {
                 }
@@ -407,14 +410,16 @@ public class Actions {
     }
     public void teleport(String teleportLocation){
         String currentLocation = map.getMapObject(x,y).getNameObject();
-        for(int i = 0;i < map.getMap().length;i++)
+        boolean run = true;
+        for(int i = 0;i < map.getMap().length&&run;i++)
         {
-            for(int j = 0;j < map.getMap()[i].length;j++)
+            for(int j = 0;j < map.getMap()[i].length&&run;j++)
             {
-                if(map.getMapObject(j,i).getNameObject().equalsIgnoreCase(teleportLocation))
+                if(map.getMapObject(j,i)!=null&&map.getMapObject(j,i).getNameObject().equalsIgnoreCase(teleportLocation))
                 {
-                    x = j;y = i;
-                    break;
+                    x = j;
+                    y = i;
+                    run = false;
                 }
             }
         }
