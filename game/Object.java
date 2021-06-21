@@ -4,13 +4,13 @@ public class Object {
     private String Name;
     private String Description;
     private Items[] Loot;
-//Constructor
+    //Constructor
     public Object(String Name, String Description, Items[] Loot) {
         setName(Name);
         setDescription(Description);
         setLoot(Loot);
     }
-//Setters
+    //Setters
     private void setName(String name) {
         Name = name;
     }
@@ -25,7 +25,7 @@ public class Object {
     public String getNameObject() {
         return Name;
     }
-//getters
+    //getters
     public String getDescriptionObject() {
         return Description;
     }
@@ -34,5 +34,7 @@ public class Object {
         return Loot;
 
     }
-
+public void settLoot(Items[] items){
+        this.Loot=items;
+}
 }

@@ -202,6 +202,19 @@ public class Actions {
         }
         return -1;
     }
+    public int returnitemIndexInventory(String item){
+        int i=-1;
+
+        for(i=0;i!=inventorypos;i++){
+            if(inventory[i]!=null){
+                if(inventory[i].getNameItem().equalsIgnoreCase(item)==true){
+                    return i;
+                }
+            }
+
+        }
+        return -1;
+    }
     /*
     input with "text recognition":
     A input is taked put to lower case and split into words, then the programm iterates throgh them trying to find a keyword. If a keyword is found the programm will search for further instructions if required
@@ -256,6 +269,76 @@ public class Actions {
                 case "list" ->{
                     list();
                     return;
+                }
+                case "discard" ->{
+                    if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                        String itemname="";
+                        String[] splittedinput=input.split(" ");
+                        if(input.split(" ").length<2){
+                            return;
+                        }
+                        else{
+                            itemname=itemname+splittedinput[1]+" ";
+                            for(int p=2;p!=splittedinput.length;p++){
+                                if(p==splittedinput.length-1){
+                                    itemname=itemname+splittedinput[p];
+                                }
+                                else{
+                                    itemname=itemname+splittedinput[p];
+                                    itemname=itemname+" ";
+                                }
+                            }
+
+                        }
+                        int cc=returnitemIndexInventory(itemname);
+                        if(cc==-1){
+                            System.out.println("The item \""+itemname+"\" is not in your inventory.");
+                                    return;
+                        }
+                        else {
+                            Items item=inventory[cc];
+                            Items itemtemp=inventory[cc];
+                            inventory[cc]=null;
+                            for(int a=cc+1;a!=inventorypos;a++){
+                                Items itemm=inventory[a];
+                                inventory[cc]=itemm;
+                                cc++;
+                            }
+                            inventorypos--;
+                            if(map.getMapObject(getX(),getY()).getLoot()!=null){
+                                int count=0;
+                                int freeindex=-1;
+                                for(int aa=0;aa!=map.getMapObject(getX(),getY()).getLoot().length;aa++){
+                                    if(map.getMapObject(getX(),getY()).getLoot()[aa]==null){
+                                        count++;
+                                    }
+                                    if (map.getMapObject(getX(),getY()).getLoot()[aa]!=null){
+                                        freeindex=aa;
+                                        break;
+                                    }
+                                }
+                                if(freeindex!=-1){
+                                    map.getMapObject(getX(),getY()).getLoot()[freeindex]=item;
+                                }
+                                else{
+                                    if(count==0){
+
+                                    }
+                                    else{
+                                        Items[] itemo=new Items[map.getMapObject(getX(),getY()).getLoot().length+1];
+                                        for(int v=0;v!=map.getMapObject(getX(),getY()).getLoot().length;v++){
+                                            Items temp=map.getMapObject(getX(),getY()).getLoot()[v];
+                                            itemo[v]=temp;
+                                        }
+                                        itemo[itemo.length-1]=item;
+                                        map.getMapObject(getX(),getY()).settLoot(itemo);
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+
                 }
                 case "examine" ->{
                     String itemname="";
