@@ -18,6 +18,7 @@ public class Map {
             {null,new Object("Hall Left", "You can barely recognize a door.",null),new Object("Blue Door", null,null),new Object("Storage", "You are in a large storage bay filled with shelves, containers and other stuff. There are enough lights for you to see.",new Items[]{new Items("crowbar","Could be used to force open a door.",false)}),new Object("Broken Door","This door is broken",null),new Object("Hall Right", "You can barely perceive a door and the hallway.\nConstat flashes of light are emitted from a seemingly broken door.",null),null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
             {null,new Object("Hall Left", "You can see some light in the hallway in front of you.",null),new Object("Door",null,null),new Object("Hall Center", "You can see some working lights again.",null),new Object("Door",null,null),new Object("Hall Right", "You notice some light in front of you.",null),null},
+            {null,null,null,new Object("Door","door desu",null),null,null,null},
             {null,null,null,new Object("Hall Center", "There are lights and you can see again.",null),null,null,null},
             {null,new Object("Breach", "It looks like the  ship was hit here. The ship will get destroyed and you will die if you don't find a way out.",new Items[]{new Items("Keycard for a blue Door","A keycard with a blue clearance level",false)}),new Object("Door", null,null),new Object("Hall Center", "You are standing in the middle of a large intersection.",null),new Object("Door", null,null),new Object("Shrine","You find yourself in a holy sanctuary dimly lit by candles surrounding pictures of a sacred god.",new Items[]{}),null,null},
             {null,null,null,new Object("Shuttle Bay", "You found the shuttle bay. There is an escape pod left. This may be your way out of here.",null),null,null,null},
@@ -191,7 +192,7 @@ public void intit(){}
                             - - - - - - - - - - - - - ||0000|     |  |     |0000|| - - - - - - - - - - - - -
                             - - - - - - - - - - - - - ||0000|  R5      R6  |0000|| - - - - - - - - - - - - -
                             - - - - - - - - - - - - - ||0000|     |  |     |0000|| - - - - - - - - - - - - -
-                            - - - - - - - - - - - - - ||0000|=====   ======|0000|| - - - - - - - - - - - - -
+                            - - - - - - - - - - - - - ||0000|=====    =====|0000|| - - - - - - - - - - - - -
                             """);
         if(x==3&&y==8)
         {
@@ -335,7 +336,7 @@ public void intit(){}
                     - - - - - - - - - - -||000|                           |000|| - - - - - - - - - -
                     - -+==========- - - //0000+===========+   +===========+0000\\\\ - - -==========+ -
                     """);
-        if(x==3&&y==14)
+        if(x==3&&y==15)
             System.out.print(
                     """
                     - -||00000000\\\\ - -//00000000000000000|\033[45;1m   \033[0m|00000000000000000\\\\- - //00000000|| -
@@ -344,7 +345,7 @@ public void intit(){}
                    
                     """
             );
-        else if(maxY>=14)
+        else if(maxY>=15)
             System.out.print(
                     """
                             - -||00000000\\\\ - -//00000000000000000|   |00000000000000000\\\\- - //00000000|| -
@@ -352,7 +353,7 @@ public void intit(){}
                             - -||000000000000000000000000000000000|   |000000000000000000000000000000000|| -
                             """
             );
-        if(x==3&&y==15)
+        if(x==3&&y==16)
             System.out.print(
                     """
                             - -||000000000O000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -367,7 +368,7 @@ public void intit(){}
                             """
 
             );
-        else if(x==1&&y==15)
+        else if(x==1&&y==16)
             System.out.print(
                     """
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -380,7 +381,7 @@ public void intit(){}
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| - 
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """);
-        else if(x==5&&y==15)
+        else if(x==5&&y==16)
             System.out.print(
                     """
                             - -||000000000O000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -393,7 +394,7 @@ public void intit(){}
                             - -||0000000000000+==========+00000000|   |0000000+===========+0000000000000|| - 
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """);
-        else if(maxY>=15)
+        else if(maxY>=16)
             System.out.print(
                     """
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -407,7 +408,7 @@ public void intit(){}
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """
             );
-        if(x==3&&y==16)
+        if(x==3&&y==17)
             System.out.print(
                     """
                             - -  \\\\00000000000000000|\033[45;1m                               \033[0m|00000000000000000// - -
@@ -420,7 +421,7 @@ public void intit(){}
                             -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                             """
             );
-        else if(maxY>=16)
+        else if(maxY>=17)
             System.out.println(
                     """
                             - -  \\\\00000000000000000|                               |00000000000000000// - -
