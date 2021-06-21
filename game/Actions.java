@@ -264,7 +264,7 @@ public class Actions {
                 }
                 //Item recognition
                 case "inventory", "bag" -> {
-                    this.printInventory();
+                    this.printInventory();//s
                     return;
                 }
                 case "list" ->{

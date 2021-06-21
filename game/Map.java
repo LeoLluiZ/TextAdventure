@@ -1,7 +1,7 @@
 package game;
 public class Map {
     private int maxY = 0;
-    /*fix teleportation to other rooms*/
+    /*fix teleportation to other rooms*///ss
     /* this is utterly fucking retarded.*/
     private final Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},

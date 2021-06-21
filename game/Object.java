@@ -37,4 +37,4 @@ public class Object {
 public void settLoot(Items[] items){
         this.Loot=items;
 }
-}
+}//s
