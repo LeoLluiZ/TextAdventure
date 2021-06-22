@@ -3,7 +3,8 @@ public class Map {
     private int maxY = 0;
     /*fix teleportation to other rooms*///ss
     /* this is utterly fucking retarded.*/
-    private final Object[][] map=new Object[][]{
+
+    private Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
             {null,null,null,new Object("Cockpit","You are in the cockpit. There are red lights flashing and alarms going off.",null),null,null,null}, //new Items[]{new Items("Green Keycard","A keycard with a clearence level of green")}
             {null,new Object("R1", "You are in a dimly light room with stuff scattered everywhere. It seems like the ship was evacuated in a rush.",new Items[]{}),new Object("Door",null,null),new Object("Hallway","The hallway is lit, but the lights are flickering. The ship must have been damaged.",null),new Object("Door",null,null),new Object("R2","There are tons of shelves, but there is almost nothing left.",new Items[]{}),null,null},
@@ -23,7 +24,9 @@ public class Map {
             {null,new Object("Breach", "It looks like the  ship was hit here. The ship will get destroyed and you will die if you don't find a way out.",new Items[]{new Items("Keycard for a Red Door","A keycard with a Red clearance level\n it seems to have \"lab\" written on top of it.",false)}),new Object("Door", null,null),new Object("Hall Center", "You are standing in the middle of a large intersection.",null),new Object("Door", null,null),new Object("Shrine","You find yourself in a holy sanctuary dimly lit by candles surrounding pictures of a sacred god.",new Items[]{}),null,null},
             {null,null,null,new Object("Shuttle Bay", "You found the shuttle bay. There is an escape pod left. This may be your way out of here.",null),null,null,null},
             {null,null,null,null,null,null,null}};
-public void intit(){}
+public void init(){
+    Items[] RandomItems = new Items[]{new Items("crowbar","Could be used to force open a door.",false),new Items("teleportation device","With this device it is possible to teleport through rooms. It's use is limited.",false)};
+}
     //Setters
     //Getters
     public Object[][] getMap()
