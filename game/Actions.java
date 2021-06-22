@@ -141,11 +141,11 @@ public class Actions {
                     System.out.println("You need a red keycard to access this door.");
                     return;
                 }
-                if(map.getMapObject(x-1,y+1).getNameObject().contains("Green")) {
+                if(map.getMapObject(x-1,y).getNameObject().contains("Green")) {
                     System.out.println("You need a green keycard to access this door.");
                     return;
                 }
-                if(map.getMapObject(x-1,y+1).getNameObject().contains("Blue")) {
+                if(map.getMapObject(x-1,y).getNameObject().contains("Blue")) {
                     System.out.println("You need a blue keycard to access this door.");
                     return;
                 }
