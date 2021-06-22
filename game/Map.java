@@ -7,21 +7,21 @@ public class Map {
     private Object[][] map=new Object[][]{
             {null,null,null,null,null,null,null},
             {null,null,null,new Object("Cockpit","You are in the cockpit. There are red lights flashing and alarms going off.",null),null,null,null}, //new Items[]{new Items("Green Keycard","A keycard with a clearence level of green")}
-            {null,new Object("R1", "You are in a dimly light room with stuff scattered everywhere. It seems like the ship was evacuated in a rush.",new Items[]{}),new Object("Door",null,null),new Object("Hallway","The hallway is lit, but the lights are flickering. The ship must have been damaged.",null),new Object("Door",null,null),new Object("R2","There are tons of shelves, but there is almost nothing left.",new Items[]{}),null,null},
+            {null,new Object("R1", "You are in a dimly light room with stuff scattered everywhere. It seems like the ship was evacuated in a rush.",new Items[]{}),new Object("Door",null,null),new Object("Hallway","The hallway is lit, but the lights are flickering. The ship must have been damaged.",null),new Object("Door",null,null),new Object("R2","There are tons of shelves, but there is almost nothing left.",null),null,null},
             {null,null,null,new Object("Door",null,null),null,null,null},
             {null,new Object("R3", "You are in a barely lit room. You can see some furniture, but it is too dark to see anything tangible. ",new Items[]{}),new Object("Door",null,null),new Object("Hallway center","You are in a hallway and the lights are still flickering.",null),new Object("Door",null,null),new Object("R4","You are in a dark office.",new Items[]{new Items("Keycard for a Green Door","A keycard with a green clearance level",false)}),null,null},
             {null,null,null,new Object("Door",null,null),null,null,null},
-            {null,new Object("R5","You are in a brightly lit room. It looks like it may be some kind of lab.",new Items[]{}),new Object("Blue Door",null,new Items[]{new Items("teleportation device","With this device it is possible to teleport through rooms. It's use is limited.",false)}),new Object("Hall Center", "The amount of working lights in the hallway is decreasing.",null),new Object("Door",null,null),new Object("R6","It seems like you found the sleeping quarters.",new Items[]{}),null},
+            {null,new Object("R5","You are in a brightly lit room. It looks like it may be some kind of lab.",null),new Object("Blue Door",null,new Items[]{new Items("teleportation device","With this device it is possible to teleport through rooms. It's use is limited.",false)}),new Object("Hall Center", "The amount of working lights in the hallway is decreasing.",null),new Object("Door",null,null),new Object("R6","It seems like you found the sleeping quarters.",null),null},
             {null,null,null,new Object("Green Door","door des",null),null,null,null},
             {null,null,null,new Object("Hall Center", "It is getting increasingly more difficult to see.",null),null,null,null},
-            {null,new Object("Hall Left", "The hallway is pitch dark you have to follow  the glowing indicators on the floor.",null),new Object("Door",null,null),new Object("Hall Center", "It is dark and you can't see.",null),null,null,null},
+            {null,new Object("Hall Left", "The hallway is pitch dark you have to follow  the glowing indicators on the floor.",null),new Object("Door",null,null),new Object("Hall Center", "It is dark and you can't see.",null),null/*new Object("Door",null,null),new Object("Hall Right", "You can barely see where you are going.",null)*/,null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
-            {null,new Object("Hall Left", "You can barely recognize a door.",null),new Object("Red Door", null,null),new Object("Storage", "You are in a large storage bay filled with shelves, containers and other stuff. There are enough lights for you to see.",new Items[]{new Items("crowbar","Could be used to force open a door.",false)}),new Object("Blue Door","Blue door des",null),new Object("", "You can barely perceive a door and the hallway.",null),null},
+            {null,new Object("Hall Left", "You can barely recognize a door.",null),new Object("Red Door", null,null),new Object("Storage", "You are in a large storage bay filled with shelves, containers and other stuff. There are enough lights for you to see.",new Items[]{new Items("crowbar","Could be used to force open a door.",false)}),new Object("Blue Door","Blue door des",null),new Object("Room", "You can barely perceive a door and the hallway.",null),null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
-            {null,new Object("Hall Left", "You can see some light in the hallway in front of you.",null),new Object("Door",null,null),new Object("Hall Center", "You can see some working lights again.",null),null,null,null},
+            {null,new Object("Hall Left", "You can see some light in the hallway in front of you.",null),new Object("Door",null,null),new Object("Hall Center", "You can see some working lights again.",null),null/*new Object("Door",null,null),new Object("Hall Right", "You notice some light in front of you.",null)*/,null},
             {null,null,null,new Object("green door","door desu",null),null,null,null},
             {null,null,null,new Object("Hall Center", "There are lights and you can see again.",null),null,null,null},
-            {null,new Object("Breach", "It looks like the  ship was hit here. The ship will get destroyed and you will die if you don't find a way out.",new Items[]{new Items("Keycard for a Red Door","A keycard with a Red clearance level\n it seems to have \"lab\" written on top of it.",false)}),new Object("Door", null,null),new Object("Hall Center", "You are standing in the middle of a large intersection.",null),new Object("Door", null,null),new Object("Shrine","You find yourself in a holy sanctuary dimly lit by candles surrounding pictures of a sacred god.",new Items[]{}),null,null},
+            {null,new Object("Breach", "It looks like the  ship was hit here. The ship will get destroyed and you will die if you don't find a way out.",new Items[]{new Items("Keycard for a Red Door","A keycard with a Red clearance level\n it seems to have \"lab\" written on top of it.",false)}),new Object("Door", null,null),new Object("Hall Center", "You are standing in the middle of a large intersection.",null),new Object("Door", null,null),new Object("Shrine","You find yourself in a holy sanctuary dimly lit by candles surrounding pictures of a sacred god.",null),null,null},
             {null,null,null,new Object("Shuttle Bay", "You found the shuttle bay. There is an escape pod left. This may be your way out of here.",null),null,null,null},
             {null,null,null,null,null,null,null}};
 
@@ -225,98 +225,99 @@ public void init(){
         if(x==3&&y==9)
             System.out.print(
                     """ 
-                    - - - - - - - - - - -||000+===========    |0000000000000000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|          \033[45;1m    \033[0m|0000000000000000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|           \033[45;1m    \033[0m            |000|| - - - - - - - - - -
                     """);
         else if(x==1&&y==9)
             System.out.print(
                     """ 
-                                    - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
-                                    - - - - - - - - - - -||000|\033[45;1m          \033[0m    |000000000000000|| - - - - - - - - - -
-                            """);
+                    - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|\033[45;1m           \033[0m                |000|| - - - - - - - - - -
+                    """);
         else if(x==5&&y==9)
             System.out.print(
                     """ 
                             - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|               |000000000000000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|               \033[45;1m            \033[0m|000|| - - - - - - - - - -
                             """);
         else if(maxY>=9)
             System.out.print(
                     """
-                    - - - - - - - - - - -||000+===========    ============+000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|               |000000000000000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000+==========      ===========+000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|                           |000|| - - - - - - - - - -
                     """
 
             );
         if(x==1&&y==11)
             System.out.print(
                     """
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m+========================+000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m                         |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|    Storage    |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m|               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|\033[45;1m  \033[0m+========================+000|| - - - - - - - - - -
-                    """
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m+=====================+  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m                         |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|       Storage       |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m|                     |  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|\033[45;1m  \033[0m+=====================+  |000|| - - - - - - - - - -
+                            """
             );
         else if(x==3&&y==11)
             System.out.print(
                     """
-                            - - - - - - - - - - -||000|  +========================+000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|   \033[45;1m               \033[0m         |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m    Storage    \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  |\033[45;1m               \033[0m|        |000|| - - - - - - - - - -
-                            - - - - - - - - - - -||000|  +========================+000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  +=====================+  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|   \033[45;1m                     \033[0m   |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m       Storage       \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  |\033[45;1m                     \033[0m|  |000|| - - - - - - - - - -
+                            - - - - - - - - - - -||000|  +=====================+  |000|| - - - - - - - - - -
                             """
             );
         else if(x==5&&y==11)
             System.out.print(
                     """
-                    - - - - - - - - - - -||000|  +========================+000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |    Storage    |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |\033[45;1m        \033[0m|000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  +========================+000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  +=====================+\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|                         \033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |       Storage       |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  |                     |\033[45;1m  \033[0m|000|| - - - - - - - - - -
+                - - - - - - - - - - -||000|  +=====================+\033[45;1m  \033[0m|000|| - - - - - - - - - -
                 """);
         else if(maxY>=11)
             System.out.print(
                     """
-                    - - - - - - - - - - -||000|  +========================+000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  +=====================+  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
                     - - - - - - - - - - -||000|                           |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |    Storage    |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  |               |        |000|| - - - - - - - - - -
-                    - - - - - - - - - - -||000|  +========================+000|| - - - - - - - - - -
-                            """);
+                    - - - - - - - - - - -||000|  |       Storage       |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  |                     |  |000|| - - - - - - - - - -
+                    - - - - - - - - - - -||000|  +=====================+  |000|| - - - - - - - - - -
+                    """);
         if(x==1&&y==13)
             System.out.print(
                     """
@@ -343,7 +344,7 @@ public void init(){
                     - - - - - - - - - - -||000|                           |000|| - - - - - - - - - -
                     - -+==========- - - //0000+===========+   +===========+0000\\\\ - - -==========+ -
                     """);
-        if(x==3&&y==14)
+        if(x==3&&y==15)
             System.out.print(
                     """
                     - -||00000000\\\\ - -//00000000000000000|\033[45;1m   \033[0m|00000000000000000\\\\- - //00000000|| -
@@ -352,7 +353,7 @@ public void init(){
                    
                     """
             );
-        else if(maxY>=14)
+        else if(maxY>=15)
             System.out.print(
                     """
                             - -||00000000\\\\ - -//00000000000000000|   |00000000000000000\\\\- - //00000000|| -
@@ -360,7 +361,7 @@ public void init(){
                             - -||000000000000000000000000000000000|   |000000000000000000000000000000000|| -
                             """
             );
-        if(x==3&&y==15)
+        if(x==3&&y==16)
             System.out.print(
                     """
                             - -||000000000O000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -375,7 +376,7 @@ public void init(){
                             """
 
             );
-        else if(x==1&&y==15)
+        else if(x==1&&y==16)
             System.out.print(
                     """
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -388,7 +389,7 @@ public void init(){
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| - 
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """);
-        else if(x==5&&y==15)
+        else if(x==5&&y==16)
             System.out.print(
                     """
                             - -||000000000O000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -401,7 +402,7 @@ public void init(){
                             - -||0000000000000+==========+00000000|   |0000000+===========+0000000000000|| - 
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """);
-        else if(maxY>=15)
+        else if(maxY>=16)
             System.out.print(
                     """
                             - -||0000000000000+==========+00000000|   |00000000+==========+0000000000000|| -
@@ -415,7 +416,7 @@ public void init(){
                             - - \\\\000000000000000000+=============+   +=============+000000000000000000//- -
                             """
             );
-        if(x==3&&y==16)
+        if(x==3&&y==17)
             System.out.print(
                     """
                             - -  \\\\00000000000000000|\033[45;1m                               \033[0m|00000000000000000// - -
@@ -428,7 +429,7 @@ public void init(){
                             -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                             """
             );
-        else if(maxY>=16)
+        else if(maxY>=17)
             System.out.println(
                     """
                             - -  \\\\00000000000000000|                               |00000000000000000// - -
