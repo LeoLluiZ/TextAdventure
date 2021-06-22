@@ -19,6 +19,8 @@ public class main {
         while(actions.getMoves()<end&&!actions.getEscapePod()){
             if(actions.getMoves()%8==0)
                 System.out.println("The ship is creeking!");
+            System.out.println("x: "+actions.getX()+"\n" +
+                               "y: "+actions.getY());
             map.printMap(actions.getX(), actions.getY());
             actions.input();
         }
