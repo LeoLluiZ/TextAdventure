@@ -158,7 +158,7 @@ public class Actions {
     public boolean searchInventory(String itemName)
     {
         for (Items items : inventory) {
-            if (items != null && items.getNameItem().equals(itemName)) {
+            if (items != null && items.getNameItem().equalsIgnoreCase(itemName)) {
                 return true;
             }
         }
@@ -332,6 +332,46 @@ public class Actions {
                     return;
                 }
                 case "discard", "drop"->{
+                    if(map.getMapObject(getX(),getY()).getLoot()==null){
+                        String itemname="";
+                        String[] splittedinput=input.split(" ");
+                        if(input.split(" ").length<2){
+                            return;
+                        }
+                        else{
+                            itemname=itemname+splittedinput[1]+" ";
+                            for(int p=2;p!=splittedinput.length;p++){
+                                if(p==splittedinput.length-1){
+                                    itemname=itemname+splittedinput[p];
+                                }
+                                else{
+                                    itemname=itemname+splittedinput[p];
+                                    itemname=itemname+" ";
+                                }
+                            }
+
+                        }
+                        int cc=returnitemIndexInventory(itemname);
+                        if(cc==-1){
+                            System.out.println("The item \""+itemname+"\" is not in your inventory.");
+                            return;
+                        }
+                        else {
+                            Items item = inventory[cc];
+                            Items itemtemp = inventory[cc];
+                            inventory[cc] = null;
+                            for (int a = cc + 1; a != inventorypos; a++) {
+                                Items itemm = inventory[a];
+                                inventory[cc] = itemm;
+                                cc++;
+                            }
+                            inventorypos--;
+                            Items[] itemo=new Items[]{item};
+                            map.getMapObject(getX(),getY()).settLoot(itemo);
+                            return;
+                        }
+
+                    }
                     if(map.getMapObject(getX(),getY()).getLoot()!=null){
                         String itemname="";
                         String[] splittedinput=input.split(" ");
@@ -354,7 +394,7 @@ public class Actions {
                         int cc=returnitemIndexInventory(itemname);
                         if(cc==-1){
                             System.out.println("The item \""+itemname+"\" is not in your inventory.");
-                                    return;
+                            return;
                         }
                         else {
                             Items item=inventory[cc];
@@ -399,7 +439,7 @@ public class Actions {
                             }
                         }
                     }
-return;
+                    return;
                 }
                 case "examine" ->{
                     String itemname="";
@@ -409,15 +449,15 @@ return;
                     }
                     else{
                         itemname=itemname+splittedinput[1]+" ";
-                            for(int p=2;p!=splittedinput.length;p++){
-                                if(p==splittedinput.length-1){
-                                    itemname=itemname+splittedinput[p];
-                                }
-                                else{
-                                    itemname=itemname+splittedinput[p];
-                                    itemname=itemname+" ";
-                                }
+                        for(int p=2;p!=splittedinput.length;p++){
+                            if(p==splittedinput.length-1){
+                                itemname=itemname+splittedinput[p];
                             }
+                            else{
+                                itemname=itemname+splittedinput[p];
+                                itemname=itemname+" ";
+                            }
+                        }
 
                     }
                     boolean objectnull=false;
@@ -426,12 +466,12 @@ return;
                     }
                     if (objectnull==false){
                         for(int c=0;c!=map.getMapObject(getX(),getY()).getLoot().length;c++){
-                          if(map.getMapObject(getX(),getY()).getLoot()[c]!=null){
-                              if(map.getMapObject(getX(),getY()).getLoot()[c].getNameItem().equalsIgnoreCase(itemname)&&map.getMapObject(getX(),getY()).getLoot()[c].getFound()==true){
-                                  System.out.println(map.getMapObject(getX(),getY()).getLoot()[c].getDescriptionItem());
-                                  return;
-                              }
-                          }
+                            if(map.getMapObject(getX(),getY()).getLoot()[c]!=null){
+                                if(map.getMapObject(getX(),getY()).getLoot()[c].getNameItem().equalsIgnoreCase(itemname)&&map.getMapObject(getX(),getY()).getLoot()[c].getFound()==true){
+                                    System.out.println(map.getMapObject(getX(),getY()).getLoot()[c].getDescriptionItem());
+                                    return;
+                                }
+                            }
                         }
                     }
                     for(int h=0;h!=inventorypos;h++){
@@ -476,7 +516,7 @@ return;
                 case "enter" -> {//shuttle, espace pod, pod
                     if(input.contains("pod") || input.contains("shutlle") || input.contains("escape pod"))
                         this.setEscapePod();
-                        else{
+                    else{
                         System.out.println("Input couldn't be recognized");
                     }
                     return;
@@ -547,7 +587,6 @@ return;
 
                             }
                             return;
-
 
                         }
                     }
