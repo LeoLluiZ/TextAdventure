@@ -47,10 +47,29 @@ public class Actions {
             else if(map.getMapObject(x,y+1).getNameObject().equals("Door")||searchInventory("Keycard for a "+map.getMapObject(x,y+1).getNameObject())) {
                 y += 2;
                 moves++;
+                }
+            else
+            {
+                if(map.getMapObject(x,y+1).getNameObject().contains("Red")) {
+                    System.out.println("You need a red keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x,y+1).getNameObject().contains("Green")) {
+                    System.out.println("You need a green keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x,y+1).getNameObject().contains("Blue")) {
+                    System.out.println("You need a blue keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x,y+1).getNameObject().contains("Broken")) {
+                    System.out.println("The door seems to be broken.");
+                    return;
+                }
             }
-        }
-        System.out.println(map.getMapObject(x,y).getDescriptionObject());
-    }
+            }
+            System.out.println(map.getMapObject(x,y).getDescriptionObject());
+            }
     public void goNorth(){
         if(map.check(x,y-1)!=false)
         {
@@ -61,6 +80,25 @@ public class Actions {
             else if(map.getMapObject(x,y-1).getNameObject().equals("Door")||searchInventory("Keycard for a "+map.getMapObject(x,y-1).getNameObject())) {
                 y -= 2;
                 moves++;
+            }
+            else
+            {
+                if(map.getMapObject(x,y-1).getNameObject().contains("Red")) {
+                    System.out.println("You need a red keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x,y-1).getNameObject().contains("Green")) {
+                    System.out.println("You need a green keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x,y-1).getNameObject().contains("Blue")) {
+                    System.out.println("You need a blue keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x,y-1).getNameObject().contains("Broken")) {
+                    System.out.println("The door seems to be broken.");
+                    return;
+                }
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
@@ -76,6 +114,25 @@ public class Actions {
                 x +=2;
                 moves++;
             }
+            else
+            {
+                if(map.getMapObject(x+1,y).getNameObject().contains("Red")) {
+                    System.out.println("You need a red keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x+1,y+1).getNameObject().contains("Green")) {
+                    System.out.println("You need a green keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x+1,y).getNameObject().contains("Blue")) {
+                    System.out.println("You need a blue keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x+1,y).getNameObject().contains("Broken")) {
+                    System.out.println("The door seems to be broken.");
+                    return;
+                }
+            }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
     }
@@ -89,6 +146,25 @@ public class Actions {
             else if(map.getMapObject(x-1,y).getNameObject().equals("Door")||searchInventory("Keycard for a "+map.getMapObject(x-1,y).getNameObject())) {
                 x -= 2;
                 moves++;
+            }
+            else
+            {
+                if(map.getMapObject(x-1,y).getNameObject().contains("Red")) {
+                    System.out.println("You need a red keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x-1,y+1).getNameObject().contains("Green")) {
+                    System.out.println("You need a green keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x-1,y+1).getNameObject().contains("Blue")) {
+                    System.out.println("You need a blue keycard to access this door.");
+                    return;
+                }
+                if(map.getMapObject(x-1,y+1).getNameObject().contains("Broken")) {
+                    System.out.println("The door seems to be broken.");
+                    return;
+                }
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
