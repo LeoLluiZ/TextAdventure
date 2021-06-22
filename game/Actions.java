@@ -62,10 +62,6 @@ public class Actions {
                     System.out.println("You need a blue keycard to access this door.");
                     return;
                 }
-                if(map.getMapObject(x,y+1).getNameObject().contains("Broken")) {
-                    System.out.println("The door seems to be broken.");
-                    return;
-                }
             }
             }
             System.out.println(map.getMapObject(x,y).getDescriptionObject());
@@ -93,10 +89,6 @@ public class Actions {
                 }
                 if(map.getMapObject(x,y-1).getNameObject().contains("Blue")) {
                     System.out.println("You need a blue keycard to access this door.");
-                    return;
-                }
-                if(map.getMapObject(x,y-1).getNameObject().contains("Broken")) {
-                    System.out.println("The door seems to be broken.");
                     return;
                 }
             }
@@ -128,10 +120,6 @@ public class Actions {
                     System.out.println("You need a blue keycard to access this door.");
                     return;
                 }
-                if(map.getMapObject(x+1,y).getNameObject().contains("Broken")) {
-                    System.out.println("The door seems to be broken.");
-                    return;
-                }
             }
         }
         System.out.println(map.getMapObject(x,y).getDescriptionObject());
@@ -159,10 +147,6 @@ public class Actions {
                 }
                 if(map.getMapObject(x-1,y+1).getNameObject().contains("Blue")) {
                     System.out.println("You need a blue keycard to access this door.");
-                    return;
-                }
-                if(map.getMapObject(x-1,y+1).getNameObject().contains("Broken")) {
-                    System.out.println("The door seems to be broken.");
                     return;
                 }
             }
@@ -347,7 +331,7 @@ public class Actions {
                     list();
                     return;
                 }
-                case "discard" ->{
+                case "discard", "drop"->{
                     if(map.getMapObject(getX(),getY()).getLoot()!=null){
                         String itemname="";
                         String[] splittedinput=input.split(" ");
@@ -415,7 +399,7 @@ public class Actions {
                             }
                         }
                     }
-
+return;
                 }
                 case "examine" ->{
                     String itemname="";
