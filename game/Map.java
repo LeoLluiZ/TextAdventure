@@ -1,7 +1,7 @@
 package game;
 public class Map {
     private int maxY = 0;
-    /*fix teleportation to other rooms*///ss
+    /*fix teleportation to other rooms*///
     /* this is utterly fucking retarded.*/
 
     private Object[][] map=new Object[][]{
@@ -11,7 +11,7 @@ public class Map {
             {null,null,null,new Object("Door",null,null),null,null,null},
             {null,new Object("R3", "You are in a barely lit room. You can see some furniture, but it is too dark to see anything tangible. ",new Items[]{}),new Object("Door",null,null),new Object("Hallway center","You are in a hallway and the lights are still flickering.",new Items[]{}),new Object("Door",null,null),new Object("R4","You are in a dark office.",new Items[]{new Items("Keycard for a Green Door","A keycard with a green clearance level",false)}),null,null},
             {null,null,null,new Object("Door",null,null),null,null,null},
-            {null,new Object("R5","You are in a brightly lit room. It looks like it may be some kind of lab.",new Items[]{}),new Object("Blue Door",null,null),new Object("Hall Center", "The amount of working lights in the hallway is decreasing.",null),new Object("Door",null,null),new Object("R6","It seems like you found the sleeping quarters.",new Items[]{}),null},
+            {null,new Object("R5","You are in a brightly lit room. It looks like it may be some kind of lab.",new Items[]{}),new Object("Blue Door",null,new Items[]{new Items("teleportation device","With this device it is possible to teleport through rooms. It's use is limited.",false)}),new Object("Hall Center", "The amount of working lights in the hallway is decreasing.",null),new Object("Door",null,null),new Object("R6","It seems like you found the sleeping quarters.",new Items[]{}),null},
             {null,null,null,new Object("Green Door","door des",null),null,null,null},
             {null,null,null,new Object("Hall Center", "It is getting increasingly more difficult to see.",null),null,null,null},
             {null,new Object("Hall Left", "The hallway is pitch dark you have to follow  the glowing indicators on the floor.",null),new Object("Door",null,null),new Object("Hall Center", "It is dark and you can't see.",null),new Object("Door",null,null),new Object("Hall Right", "You can barely see where you are going.",null),null},
@@ -24,6 +24,7 @@ public class Map {
             {null,new Object("Breach", "It looks like the  ship was hit here. The ship will get destroyed and you will die if you don't find a way out.",new Items[]{new Items("Keycard for a Red Door","A keycard with a Red clearance level\n it seems to have \"lab\" written on top of it.",false)}),new Object("Door", null,null),new Object("Hall Center", "You are standing in the middle of a large intersection.",null),new Object("Door", null,null),new Object("Shrine","You find yourself in a holy sanctuary dimly lit by candles surrounding pictures of a sacred god.",new Items[]{}),null,null},
             {null,null,null,new Object("Shuttle Bay", "You found the shuttle bay. There is an escape pod left. This may be your way out of here.",null),null,null,null},
             {null,null,null,null,null,null,null}};
+
 public void init(){
     Items[] RandomItems = new Items[]{new Items("crowbar","Could be used to force open a door.",false),new Items("teleportation device","With this device it is possible to teleport through rooms. It's use is limited.",false)};
 }
