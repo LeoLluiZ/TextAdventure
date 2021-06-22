@@ -16,7 +16,7 @@ public class Map {
             {null,null,null,new Object("Hall Center", "It is getting increasingly more difficult to see.",null),null,null,null},
             {null,new Object("Hall Left", "The hallway is pitch dark you have to follow  the glowing indicators on the floor.",null),new Object("Door",null,null),new Object("Hall Center", "It is dark and you can't see.",null),new Object("Door",null,null),new Object("Hall Right", "You can barely see where you are going.",null),null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
-            {null,new Object("Hall Left", "You can barely recognize a door.",null),new Object("Red Door", null,null),new Object("Storage", "You are in a large storage bay filled with shelves, containers and other stuff. There are enough lights for you to see.",new Items[]{new Items("crowbar","Could be used to force open a door.",false)}),new Object("Blue Door","Blue door des",null),new Object("Hall Right", "You can barely perceive a door and the hallway.",null),null},
+            {null,new Object("Hall Left", "You can barely recognize a door.",null),new Object("Red Door", null,null),new Object("Storage", "You are in a large storage bay filled with shelves, containers and other stuff. There are enough lights for you to see.",new Items[]{new Items("crowbar","Could be used to force open a door.",false),new Items("teleportation device","With this device it is possible to teleport through rooms. It's use is limited.",false)}),new Object("Blue Door","Blue door des",null),new Object("Hall Right", "You can barely perceive a door and the hallway.",null),null},
             {null,new Object("Door", null,null),null,null,null,new Object("Door", null,null),null},
             {null,new Object("Hall Left", "You can see some light in the hallway in front of you.",null),new Object("Door",null,null),new Object("Hall Center", "You can see some working lights again.",null),new Object("Door",null,null),new Object("Hall Right", "You notice some light in front of you.",null),null},
             {null,null,null,new Object("Special Door","door desu",null),null,null,null},
@@ -43,6 +43,10 @@ public void init(){
             return false;
         }
 
+    }
+    public int getMaxY()
+    {
+        return maxY;
     }
     public void printMap(int x,int y) {
         //First part is always printed

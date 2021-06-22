@@ -590,6 +590,25 @@ return;
             {
                 if(map.getMapObject(j,i)!=null&&map.getMapObject(j,i).getNameObject().equalsIgnoreCase(teleportLocation))
                 {
+                    if(i > map.getMaxY())
+                    {
+                        System.out.println("You have not explored the room yet. Therefore you can not teleport.");
+                    }
+                    else
+                    {
+                        x = j;
+                        y = i;
+                    }
+                    run = false;
+                }
+            }
+        }
+        for(int i = 0;i < map.getMap().length&&run;i++)
+        {
+            for(int j = 0;j < map.getMap()[i].length&&run;j++)
+            {
+                if(map.getMapObject(j,i)!=null&&map.getMapObject(j,i).getNameObject().equalsIgnoreCase(teleportLocation))
+                {
                     x = j;
                     y = i;
                     run = false;
